@@ -1,0 +1,359 @@
+Abstract
+- L7: I would also specify the angular resolution of the final spectral cubes, which is not the same as the ALFA beam given before (also because the reader only discovers the origin of the 6' resolution in Section 2.4).
+
+Authors: We agree with the comment and have added 'with an angular resolution of 6' ' in the end of Line 6.
+
+- L8: "319 RRL detections" - I would add "... in the direction of 244 known HII regions" (to avoid confusion with the 244 number given in Section 4). However, the authors detected more than 79 RRL lines towards the 79 candidate regions - if I am not mistaken - so the numbers should be updated here.
+
+Authors: We've added the numbers of known HII regions and detections of candidates.
+
+Section 1
+
+- P3, L4: "in the fourth quadrant" - should be third and fourth.
+
+Authors: We've changed it to "in the third and fourth quadrants"
+
+Section 2
+- I find that it would be best to incorporate P2 ("We cut the...") in the sub-sections that follow, in order to describe the data reduction from the beginning to the end, without having to step back and forth.
+For example, in Section 2.1, the authors describe the RFI removal. This uses a "median value, which is obtained using a median filter of width 300 channels." Does this refer to the whole bandpass? I'm inclined to think that is does, because usually RFI removal is done earlier on in the data processing; but also because the +/- 300 km/s velocity range of the final spectral cubes only contains (600kms/s)/(5.1km/s)=117 channels. Unless I am missing something.
+Another example in Section 2.3: the authors mention (in L3) a 5th order polynomial fit to the stacked spectra, when in Section 2 they mentioned a 3rd order polynomial fit to individual spectra. It's clear that the first applies to the stacked spectra, while the second applies to individual spectra, but in my opinion it would be better to describe these steps together. 
+
+Authors: We've rearranged the structure of Section 2 following the suggestion from the referee. "Section 2.2 Bad data removal" has been moved to Section 2.4, where we summarize the RFI filtering. "Section 2.3 RRL stacking" is now Section 2.2 incorporating with P2 of Section 2. The "Section 2.4 Data cubes" is now Section 2.3.
+When we did perform the median filter to the whole bandpass for the first step RFI removal. However, the "300 channels" refers to the filter window, which is one of the two parameters of the median filter. The other is the multiple of the spectral rms above the median value, whose value is 5 in our case.
+
+Section 2.1
+- P2, L4: "those in the range" - add latitude (range)
+
+Authors: We've added "latitude" in the sentence.
+
+Section 2.2 - S2.2 has been moved to S2.4.
+- P1, L1: The acronym RFI needs to be defined in the previous section, where radio frequency interference is first mentioned.
+
+Authors: We've moved the definition of the acronym RFI to the last paragraph before Section 2.1, where radio frequency interference is first mentioned.
+
+Table 1:
+- I find it confusing (and not very nice) to read "-1.5 - + 1.5", or "-300 - +300". Another example is in the caption of Fig. 3, "-300 - -200 km/s". Could the authors write it otherwise? For example -300 to -200? (And correct all other instances throughout the paper.)
+Authors: We've changed the range form to "-1.5 to +1.5" throughout the paper.
+
+Section 3
+- P1, L8: "mid-infrared" - should be MIR, since the authors defined the acronym above. The same applies to IR, which is defined in the introduction but not used in the last sections of the paper.
+Authors: Modifications have been made on this comment.
+
+- P2, L4: The Gaussian fits are performed between -10 and +120 km/s, so why are there sources in Tables 6 and 7 (of the Appendix) for which V_LSR is < -10km/s? (See my related comment regarding Section 5.)
+
+Authors: As was described in the paper, the Gaussian fits were run automatically. We did checked the fitting results and the spectra by hand. We did see a couple of RRL detections with V_LSR < -10 km/s whose S/N > 5, which were added into the catalogs in the end. We add the description of the manual check of the fitting results following P3.
+
+- P4, L2: SIGMMA detects H RRL emission towards 244 out of 329 known HII regions. Could the authors comment on why emission is not detected towards the remainder 85 known sources? The same comment applies to the candidate HII regions: can those which do not show H RRL emission still be considered candidates? Why did Anderson et al. not detect RRL emission towards the candidate sources? Why does SIGMMA do better? Some discussion on what SIGMMA brings to HII region catalogues is missing, and it would enrich this section. 
+Authors: We think there are two possible reasons related to this issue. About 3/4 of the 85 non-detected known sources are with angular size less than 2 arcmin while the ALFA beam size is 3.4 arcmin. Also, Figure 1 shows the actual data coverage of the survey, from which one can see the considerable blank area. SIGGMA's sensitivity enabled RRL detections towards the candidate HII regions. However, same reason applies for the non-confirmed candidate HII regions. We think high sensitivity interferometry observations can be more powerful to detect small angular size targets. We added discussions on this issue to P5 of this session.
+
+
+- P6, L2: "We therefore note" - should be "note in the Tables". Incidentally, the a and b superscripts used in Tables 2 and 3 in the main text, should also be defined in Tables 6 and 7.
+
+Authors: We've made the changes and added the note in Tables 6 and 7.
+
+- P6, L5: "Since sources in the "group" sample are frequently found toward known regions" - why frequently? Haven't these sources been defined before are being (always) associated with known regions?
+
+Authors: Yes, the "group" sample were defined being associated with known HII regions. We removed the word "frequently". 
+
+- P8, L2: "angularly-large" - large angular size HII regions
+
+Authors: We've changed it following the referees suggestion.
+
+Section 4.1
+
+- P1, L3: "there are a few detections" - not clear what "detections" means. There is only one candidate HII region in this longitude range listed in Table 7; and there is no clear sign of emission in the maps of Fig. 6. 
+
+Authors: We intended to indicate that the RRL emission in this region is rare. We've rephrased the sentence. 
+
+Section 4.2
+- P1, L4: I think that a comma is needed between "thermal emission" and "by assuming", otherwise the "which is expressed as" refers to the electron temperature. 
+
+Authors: We've added a comma between "thermal emission" and "by assuming". 
+
+- P1, L13: "Correlations can be seen from the HII regions and some of the SNRs." This sentence is not clear. 
+
+Authors: We've rephrased the sentence.
+
+- General comment on the free-free emission estimate: did the authors compare their TC map with that derived by Alves et al.? (Even though Alves et al. use an electron temperature that changes with longitude.) It would be interesting to cross-check these two surveys, which are so far the only fully sampled RRL surveys providing free-free emission estimates. I also think that such a comparison would help quantify SIGGMA's sensitivity to large-scale emission (see my comment regarding Section 8.)
+
+Authors: We did compare our Tc map with that derived by Alves et al 2015, although the co-covering Galactic longitude range for the two surveys is limited from 34 to 52 degree. The results match with each other. We added the discussion in the text.
+
+Figure 7
+- "CO contours by (Dame et al. 2001)" - CO contours from the survey of Dame et al. (2001)
+
+Authors: We've changed it as suggested.
+
+Figure 8
+- "Free-Free" - Free-free
+
+Authors: We've changed it as suggested.
+
+- I suppose that the sizes of the circles are proportional to the angular sizes of the sources?
+
+Authors: Yes. We've added this information in the figure caption. 
+
+- I find the white circles hard to see on the bright HII regions (which are also white), for example on W51.
+
+Authors: We've changed the color of the circles. Blue for HII regions and green for SNRs.
+
+- "The bright spots" - do the authors refer to the bright pixels at negative latitudes? How would missing data produce peaks in emission?
+
+Authors: Yes, we do refer to the bright pixels at negative latitudes. We produce data cube with the software Gridzilla, which will introduce very noisy fake spectra on blank pixels.
+
+Figure 9
+- "Free-Free Continuum Intensity" - Free-free continuum intensity
+Author: We've changed it as suggested.
+
+Section 5
+- P1, L2: "SIGGMA detects H RRL emission from the velocity range ~ -50 to 150 km/s (cf Fig. 7)". In the previous section, the authors refer to the emission that is seen at negative velocities in Fig. 7 as arising from He and C RRLs. Emission at negative velocities in the longitude range under study is not expected from Galactic rotation, though, due to the velocity spread within the spiral arms, some emission can be seen at V ~ -10, -20 km/s. (As a continuation of my comment above:) There are 3 HII regions in Table 6 with V < - 40 km/s. Take for example source G037.028-00.202 (in Table 6). Couldn't the -40 km/s component be the He counterpart of the H RRL at 85.4 km/s? 
+
+Authors: For source G037.028-00202 (in Table 6), the -40 km/s component is possible to be the He counterpart of the H-RRL at 85.4 km/s. We added a footnote for this case. However, the other two sources with V_LSR < -40 are not likely to be He-RRL since their whole spectra both have single peak line profiles. There are no H-RRL counterparts for them if they are He-RRL. Thus, we said in the text that SIGGMA detects H-RRL emission from -50 to 150 km/s. We now think it's better to rephrase the sentence (Please see in the text).
+
+- P1, L3: "... by shifting the velocity to center at the C RRL rest frequency." How do the authors do this when there is more than one H velocity component in this longitude range? Is this shift constant throughout the whole region? Or do the authors fit Gaussians to every single spectrum (pixel) to identify the H RRL and thus to know relative to which (H) velocity they should shift? This point needs to be clarified. 
+
+Authors: The data cube was made centring at the rest frequency of H163a (1504.608 MHz) by default. Here by "shifting", we mean to reproduce the data cube centring at the rest frequency of C163a (1505.359 MHz). This step actually introduced an constant shift in velocity of ~150 km/s throughout the whole region. It doesn't vary with the source velocity (nor multiple velocity components). 
+
+- P1, L5: "... same velocity range as we did for H RRLs." Is this indeed an intermediate step performed by the authors just to have an idea of the existence of C RRL emission? I ask this question because none of the C RRL maps correspond to an integral between -20 and 120 km/s, which is the velocity range used to create the H RRL moment map, cf Fig. 8.
+
+Authors: This description was a mistake and is removed. C-RRL is narrower and weaker than H-RRL. The integral velocity range should be away from the board H-RRL. We used different velocity ranges for different C-RRL sources based on their own emission features. One can find the integral velocity ranges in the captions of C-RRL maps.
+
+- P1, L8: "... the integrated C RRL intensity..." Integrated in what? Space and/or velocity? (See related comment below). Also, shouldn't "H to C RRL integrated intensity" be C to H?
+
+Authors: We first obtained the spacial averaged spectrum for each source over its radius, and then provided the line parameters in Table 4. "integrated C-RRL intensity" means that the spectrum was integrated in velocity.  We've changed "H- to C-RRL" to "C- to H-RRL"
+
+- P2, L8: "We also included..." - the authors should also mention the 4.5 micron data here. 
+
+Authors: We've add the information of 4.5 micron data here.
+
+- P2, L12: The authors say that the C RRL emission peaks on the corresponding HII region as defined by the infrared emission; however, this peak is actually offset from the peak in H RRL emission - is this relevant? 
+
+Authors: Comparing Fig 10 (b) with Fig 10 (d), we do see an offset of the C-RRL emission peak from the H-RRL emission. It is reasonable for the C-RRL emission can be from the outer layer of the HII region and H-RRL emission peaks right at the center. However, the offset is less than 0.02 degree, which is much smaller than the ALFA beam size. So the offset could also come from the beam error. We rephrased this part in the text.
+
+- P2, L13: About the extended C RRL structure to the north of G34.2+0.2: I understand that the authors derive the integrated C RRL emission using a narrow velocity range (30 to 70 km/s). However, looking at the spectral grid, and in particular at the negative spikes affecting the spectra, it is tricky to understand how the authors recover emission in this northern region. In other words, how confident can the authors be that this northern extension is real?
+
+Authors: We understand the referee's concern. We double checked the spectra from the extended C-RRL structure to the north of G34.2+0.2 and think the signal below 3 degree in Galactic latitude is likely to be real. The negative spikes can be the baseline issues, to which we didn't apply any special processing. We added note on this saying that there is possibility for this extended C-RRL emission to be artificial due to the SIGGMA data quality and need to be confirm with further study.
+
+- P2, L18: Here the authors could mention that the detection of stronger C RRL emission around some HII regions - giving rise to the annular structure - has been pointed out before. For example based on the analysis of similar data, by Alves et al. (2015).
+
+Authors: We added the description of former studies on the "annular structure" of C-RRL emission.
+
+- P2, last sentence: How better a tracer of PDRs is the 8 micron emission compared to the 4.5 and 24 micron emission? References need to be included to support the sentence. 
+
+Authors: We've discussed the PAH emission at 8um is used to identify PDRs early in this paragraph. Here we rephrased the sentence and cite the reference again.
+
+Table 4
+- I have a few comments concerning the "Radius" listed in the table.
+
+(1) The use of the radius is not entirely clear. I imagine that it was used to calculate the integrated C RRL emission listed in column 6 (given its units of Jy km/s)? And also used to estimate the corresponding H RRL emission (which is then used to derive the ratio C/H)? If that is the case, this should be explicitly mentioned in the text.
+
+Authors: Yes, the radius was used to extract the C/H RRL spectrum of the region. We've added this information in the text. We also noted the use of the radius in the table.
+
+(2) The radius of the circle plotted in some of the C RRL figures (in the Appendix) does not correspond to the number given in Table 4, in particular for sources 5 (G43.2-0.0), 6, 7, and 10 listed. 
+
+Authors: We double checked the circle sizes in the C-RRL figures with the values given by Table 4. They do match with each other. The spectral grid for all the figures are with the same size of ~ 3 arcmin, which are not the axis grid correspond to the axis ticks.
+
+(3) Assuming that the authors use the circle to obtain the integrated C and H RRL emission, what is the meaning of integrating within a circle whose diameter is less than the 6 arcmin beam width? (In the case of the radius=0.03 deg = 1.8 arcmin, thus diameter = 3.6 arcmin).
+
+Authors: SIGGMA is not a Nyquist sampling survey and sometimes affected by RFIs, the coverage of the raw data are not ideally uniform. The data cube is made with pixel size of 1 x 1 arcmin. By averaging the spectra over the central area, the noise level can be reduced. 
+
+(4) A follow-up question is, how did the authors choose this radius? For example, in Fig. 25 the circle looks to be centred at a maximum in C RRL emission but it does not include most of the emission detected in the region. 
+
+Authors: Because the C-RRLs are weak, We only choose the central area of the emission region for the averaged spectrum. We believe this will give an better S/N when the signal is comparable to the noise level of the surrounding pixels.
+
+- Within which velocity range has the H RRL line been integrated, in order to compute the C/H ratio? 
+
+Authors: The integrated line intensity is calculated from the fitted line parameter, which is line peak flux times the FWHM.
+
+Figure 16
+- Similarly to my comment above concerning the C RRL spectra shown in Fig. 10, I find it curious/misleading to see C RRL contours in the south of the region, where the spectra show a clear negative spike.
+
+Authors: The negative spike to the south of the region is likely to be a narrow RFI from the off-position. However, the extended structure is an integral result over a velocity range. We didn't apply any special processing. A double check to the procedure gives the same result. We added comment in the caption about the negative spike.
+
+Figures 17 and 22
+- In these two figures the authors show the C RRL integrated map over a frequency range that does not correspond to that where the H RRL is detected, unless I am missing something. For example, Fig. 17 displays the C RRL map integrated over 10 to 40 km/s, whereas Table 6 gives V = 49.1 km/s as the H RRL velocity for this source. The same applies to Fig. 22; in this case the H RRL emission of the source peaks at V = 32.6 km/s and the C RRL map is integrated between 0 and 30 km/s. 
+
+Authors: For these C-RRL regions, we firstly examined the line profiles by hand and chose the integrated velocity range centering at the line peak and covering about two time of their FWHM. So in some cases, the C-RRL velocities don't match with the H-RRL velocities.
+
+Section 6
+- P2, L6: I imagine that for each source the authors extract the mean spectrum, integrated within the angular extent of the source?
+
+Authors: Yes. We rephrased the sentence to prevent confusion.
+
+- Here the reader may wonder why the authors didn't use the source sizes listed in the Green catalogue. It would be good to clarify the reason(s) (e.g. not every SNR in the Green catalogue has a listed angular size?). Also, could the authors indicate which source sizes did they use to plot the SNR circles in Fig. 8?
+
+Authors: The Green catalogue lists the source sizes, which correspond to rather extended structure of the SNRs. We would like to be careful not including the RRLs from diffuse ISM. So we adopted compact structure of the sources when averaging. In Fig. 8, we used the angular sizes that were provided by the Green catalog for SNRs. We added the explanation in the text.
+
+- P2, L7-8: I suppose that the authors used the same Gaussian fitting technique as the one applied to the HII regions to extract the line parameters? This could be mentioned in the text.
+
+Authors: Yes, we did applied the same Gaussian fitting technique for both SNRs and HII regions. We added this information in the text.
+
+- P3, L1: Have such broad line widths been observed in the studies mentioned in the first paragraph? If yes, this should be mentioned at the end of this first sentence. 
+
+Authors: The broad line width feature were not reported in the literature before.
+
+- P3, L8: What do the authors mean by "agreement between SNR profiles"? Agreement between the spectra of the different SNRs?
+
+Authors: Yes. We rephrased the sentence.
+
+===================================================================================================================================
+- P4, last sentence: Has the stimulated emission origin been suggested by any of these previous studies? I.e. is this also a conclusion from the aforementioned papers? If not, I suggest to leave this sentence to the last paragraph of the section, where this is further discussed. There, the authors should add reference(s) to support the idea of stimulated emission. My recollection is that at frequencies around 1-2 GHz H RRL stimulated emission is actually not very important (e.g. Shaver 1980, A&A, 90, 34). Please see other related comments below.
+
+Authors: ?
+===================================================================================================================================
+
+- P5: References could be given on the well-known W44 source, in particular following the statement about its expansion.
+
+Authors: References for W44 has been added.
+
+Figure 11
+- L2 of caption: C RRL should be H RRL.
+
+Authors: Yes. The caption has been fixed.
+
+- "The blue circles are the location of HII regions." From Table 6 I imagine?
+
+Authors: The sentence has been rephrased as "The blue circles are the location of known HII regions from the WISE catalog."
+
+Section 7.1
+- P1, last sentence: A reference (or references) should be included here.
+
+Authors: We added references here.
+
+- P2, L10: "... peak at the two sources, " Do the authors mean that the H RRL emission peaks approximately at the maximum of the VLA continuum for both sources?
+
+Authors: We mean that the H-RRL emission of 10 km/s peaks approximately at the maximum of the VLA continuum for the two sources. The 60 km/s H-RRL emission does so too. We rephrased the sentence in the text.
+
+- P2, last sentence: I would remove this sentence, as it comes unexpectedly and is actually discussed in the following paragraph. 
+
+Authors: We removed this sentence.
+
+- P3, L3: Is 11.4 kpc the kinematic distance corresponding to the 10 km/s component? If yes, then I suggest re-writing the sentence as "The kinematic distance for W49A from the 10km/s component, 11.4 kpc, agrees with the known distance for this region, 11.1 kpc, so we can assume that the 10km/s component comes from gas that is about 11 kpc away."
+
+Authors: The 11.4 kpc is the kinematic distance corresponding to the 10 km/s component. The sentence has been re-writed as suggested by the referee.
+
+- P3, L5: Do the authors mean that Zhu et al. (2014) assigned a distance of ~ 10 kpc based on a velocity of 40 km/s? Velocity from what/which line? (Also, because 40 km/s is quite different from the 10 and 60 km/s observed here.)
+
+Authors: Zhu et al. (2014) assigned a kinematic distance of ~ 10 kps for W49B based on the CO emision line.
+
+===================================================================================================================================
+- P3, L9: I don't quite agree that one would expect a shell-like RRL emission around W49B, if the 60 km/s RRL component is associated with gas surrounding the SNR. What one would see - and this would imply a very unlikely configuration - if the 60 km/s corresponded to the maximum velocity of the expanding shell, would be a ring-like structure around the SNR. Therefore, if the 60 km/s is indeed associated with expanding gas around the SNR, one should observe only a fragment of a shell (and not an entire shell) - this is possibly what one is seeing in Fig. 12 (d)? So I do not quite agree with the authors on their conclusion - that the 60 km/s cannot be explained by expanding gas - based on the morphology of the emission. However, I do agree with the authors on the line width argument. 
+
+Authors: ?
+===================================================================================================================================
+- A follow-up comment on the 60 km/s component: this velocity corresponds approximately to the tangent velocity at the longitude of 43 degrees. The fact that it is seen towards W49A and W49B and, moreover, with approximately the same line temperature (Fig. 12 (b)), suggests that this velocity component originates in the ionised medium along the line of sight towards the W49 complex. Do the authors agree with this?
+
+Authors: ?
+===================================================================================================================================
+
+- P4, L6: "differential..." ins't this simply the "difference" between the two spectra? 
+
+Authors: Yes, it is. We changed "differential" to "difference".
+
+===================================================================================================================================
+- P5, last sentence: I am afraid I do not understand this last statement. First, it is quite confusing since just before one is reading about the 60 km/s component in HI absorption whereas this last sentence refers to (I think) the H RRL 60 km/s component. Second, I do not see where the "stimulated emission" argument comes from. Again, if the authors suggest that this emission is not in local thermal equilibrium but stimulated by the background synchrotron continuum, more arguments (calculations, references) should be given.
+
+Authors: ?
+===================================================================================================================================
+
+Figure 12
+- First sentence of the caption should be changed, since not all panels show the "integrated RRL intensity maps of W49". Something like "SIGGMA observations of the W49 complex", for example. 
+
+Authors: The caption has been changed as suggested.
+
+- Panel (b): These are average spectra I supposed - if so, averaged within which region?
+
+Authors: Yes, they are average spectra. For W49A, the angular size is given by the WISE catalog. For W49B, we adopted the angular size from Table 5.
+
+- What does the 3.4 arcmin circle on panels (c) and (d) correspond to?
+
+Authors: This 3.4 arcmin circle is to show the ALFA beam size. We added the information in the text.
+
+Figure 13
+- "Emission at negative values"? Are the authors referring to the absorption features? 
+
+Authors: Yes. We rephased the sentence.
+
+Section 7.2
+- P2, L4: This sentence is slightly confusing. I would rephrase it to something like: "The infrared emission, which arises from dust and PAHs, is seen to be well associated with the HII regions."
+
+Authors: We modified the sentence as suggested by the referee.
+
+- P2, L5-8: I don't think that the example given here is the best one to illustrate SIGGMA's capability to detect diffuse emission. In fact, Fig. 8 shows that within the big circle, there are other smaller circles - which are not shown in Fig. 14 by the way. Therefore, there are other smaller size HII regions inside that area, which are actually well seen in the Spitzer data, and to which the RRL emission seems to be associated. (Also, I could not find this "known HII region" in Table 6, but maybe I missed it.)
+
+Authors: We think the referee's argument is reasonable and removed this description.
+
+===================================================================================================================================
+- P2, L12: I am afraid that I don't follow the reasoning: the authors say that leaking photons from HII regions destroy PAHs (a reference should be given here), and this is why we do not see infrared emission associated with the H RRLs outside HII regions. So why do we see the same infrared emission associated with the HII regions at all? I am probably missing something. 
+Authors: ?
+===================================================================================================================================
+
+- P2, L13: I suggest the following additions to the sentence: "... C RRL grid toward W51A and part of W51B, ... W51C regions, respectively."
+
+Authors: We modified the sentence as suggested by the referee.
+
+- P3, L3: It should be tangent velocity, not tangential. 
+
+Authors: We fixed this error.
+
+- P4, L2-3: I would remove the two "high-velocity" in the sentence. If the authors intend to say that the emission is at higher velocity than the standard 60 km/s, then they can write: "... "they found emission line components of CO and HCO+, as well as HI, at the higher velocity of around 100 km/s."
+
+Authors: We modified the sentence as suggested by the referee.
+
+- P4, L6: Could the -20 km/s be the carbon counterpart of the 122 km/s H component?
+
+Authors: There is possibility for the -20 km/s component to be the carbon counterpart of the 122 km/s H-RRL. Although the C-RRL is usually expected to be narrower. We rephrased this sentence.
+
+===================================================================================================================================
+- P5, L5: Again, I am afraid I cannot follow the author's conclusion on the stimulated emission origin of the H RRL emission towards W51C. (Why can't this be from diffuse ionised gas that is present all over the complex? Why does it have to be stimulated? Following my previous comment on this, such statements should be accompanied by some calculations, or at least references.)
+
+Authors: ?
+===================================================================================================================================
+
+- P5, last sentence: Are these velocities compatible with what is known from the expansion velocities of the W51C SNR? I imagine so, but it would be good to add either a short comment or a reference (this also applies to the discussion on W49B). 
+
+Authors: Yes it does. We add a comment on the expansion velocities here.
+
+Figure 14
+- "SIGGMA H RRL contours" - what was the velocity range used to integrate the H RRLs?
+
+Authors: In order to show the general RRL feature over the W51 complex, we integral velocity range from 30 to 90 km/s, that is to only cover the major velocity component.  
+
+Figure 15
+- Is the circle in panel (b) the same as in Fig. 14?
+
+Authors: Yes. The circle here is the same as in Fig. 14, which shows the location and radius of the SNR.
+
+Section 8
+- P2, L1: "246 known" - shouldn't this number be 244? (As per Section 3.) I would find it very useful to give the number of sources in the caption of each table (in particular Tables 6 and 7), as well as the number of detections (or velocity components). Even better would be to actually number each source in the Tables, which would immediately tell the reader how many there are, but this is secondary. 
+
+Authors: Right. The correct number is 244 for the known HII catalog. We add the number of sources in the caption of table 6 and 7.
+
+- P2, last sentence: I don't recall reading about this anywhere else in the paper. If such a statement is made in the conclusion, it should be discussed before. Especially because this makes an important point: above which spatial scales is the survey insensitive to emission? This needs to be discussed, as the authors claim throughout the paper that "SIGGMA is the most sensitive large-scale RRL survey" that exists. (See my related comment above, on the comparison with the survey by Alves et al..)
+
+Authors: We add discussion about this issue in Section 2 P1. 
+
+- P4: The second sentence of this paragraph is hard to follow, it should be rephrased.
+
+Authors: We've rephrased this sentence.
+
+===================================================================================================================================
+- P5 & P6: My queries concerning the stimulated emission towards SNRs apply here.
+
+Authors: ?
+===================================================================================================================================
+
+
+Comments following routine data/software preview:
+
+1) The last line of the first paragraph of the summary say that the survey data is available online at http://www.naic.edu/~siggma/. It does not appear that this data is currently on the site. In the interest of long term preservation we recommend that the authors also place a copy in a 3rd party repository that issues DOIs, like Zenodo, and cite the DOI in the article. A tutorial on how to do this is available here:
+
+https://github.com/AASJournals/Tutorials/tree/master/Repositories
+
+2) The authors could save a considerable amount of money ($660) in publication charges by merging Figures 16-38 into a single figure set. Details on how to set this up in the latex manuscript is available here:
+
+http://journals.aas.org/authors/aastex/aasguide.html#figureset_figures
+
+3) Per the new AAS software policy, http://journals.aas.org/policy/software.html, the authors should modify their AASTeX v6.1 manuscript to highlight the code they used (both cited and unmentioned in the current text) with the new \software command, e.g.
+
+\software{Gridzilla (Barnes et al. 2001)}
+

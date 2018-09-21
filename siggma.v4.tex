@@ -1,0 +1,1095 @@
+%%
+%% Beginning of file 'siggma.tex'
+%%
+%% Created March 17 2017 by LB
+%% Last modified April 2018 by LB
+%%
+%% This is a manuscript for the siggma data release paper using the
+%% AASTeX v6.1 LaTeX 2e macros.
+%%
+\documentclass[manuscript]{aastex61}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{linkcolor=red,citecolor=blue,filecolor=cyan,urlcolor=magenta}
+
+%\received{}
+%\revised{}
+%\accepted{}
+%\submitjournal{}
+
+\shorttitle{SIGGMA. II}
+\shortauthors{Liu et al.}
+%\watermark{DRAFT}
+\setwatermarkfontsize{100 pt}
+
+%\usepackage[a4paper, margin=1.7cm]{geometry}
+\usepackage[flushleft]{threeparttable}
+\usepackage{threeparttablex}
+\usepackage{graphicx}
+\usepackage[caption = false]{subfig}
+\usepackage{float}
+\usepackage{longtable}
+\newcommand{\hii}{{\rm H\,}{{\sc ii}}}
+\newcommand{\hi}{{\rm H\,}{{\sc i}}}
+\newcommand{\kms}{\,km\,s$^{-1}$}
+\newcommand{\kpc}{\,kpc}
+\newcommand{\ghz}{\,GHz}
+\newcommand{\um}{\mu m}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Survey of Ionized Gas of the Galaxy, Made with the Arecibo telescope (SIGGMA): Inner Galaxy Data Release}
+
+\correspondingauthor{Bin Liu}
+\email{bliu.zj@gmail.com}
+\author[0000-0002-1311-8839]{Bin Liu}
+\affil{National Astronomical Observatories, Chinese Academy of Sciences, Beijing 100012, China}
+\affil{West Virginia University, Morgantown, WV 26506, USA}
+\author{L. D. Anderson}
+\affil{West Virginia University, Morgantown, WV 26506, USA}
+\affil{Adjunct Astronomer at the Green Bank Observatory, P.O. Box 2, Green Bank WV 24944, USA}
+\affil{Center for Gravitational Waves and Cosmology, West Virginia University, Chestnut Ridge Research Building, Morgantown, WV 26505,
+USA}
+\author{Travis McIntyre}
+\affil{New Mexico Legislative Finance Committee, Santa Fe, NM 87501, USA}
+\author{D. Anish Roshi}
+\affil{National Radio Astronomy Observatory\footnote{The National Radio Astronomy Observatory is a facility of the National Science Foundation operated under a cooperative agreement by Associated Universities, Inc.}, 520 Edgemont Rd, Charlottesville, VA 22903, USA}
+\author{Ed Churchwell}
+\affil{University of Wisconsin-Madison, Madison, WI 53706, USA}
+\author{Robert Minchin}
+\affil{Arecibo Observatory, HC03 Box 53995, Arecibo 00612, Puerto Rico}
+\author{Yervant Terzian}
+\affil{Cornell University, Ithaca, NY 14853, USA}
+
+\begin{abstract}
+The Survey of Ionized Gas of the Galaxy, Made with the Arecibo telescope (SIGGMA) provides a fully-sampled view of the radio recombination line (RRL) emission from the portion of the Galactic plane visible by Arecibo.
+Observations use the Arecibo L-band Feed Array (ALFA), which has a FWHM beam size of 3$\arcmin$.4. 
+Twelve hydrogen RRLs from H163$\alpha$ to H174$\alpha$ are located within the instantaneous bandpass from 1225\,MHz to 1525\,MHz.
+We provide here cubes of average (``stacked'') RRL emission for the inner Galaxy region $32\degr \le \ell \le 70\degr$, $|b|\le1.5\degr$\textbf{, with an angular resolution of 6$\arcmin$}.
+The stacked RRL rms at 5.1\kms\ velocity resolution is $\sim0.65$\,mJy\,beam$^{-1}$, making this the most sensitive large-scale fully-sampled RRL survey extant.
+We use SIGGMA data to catalogue 319 RRL detections in the direction of \textbf{244} known \hii\ regions, and \textbf{108} new detections in the direction of \textbf{79} \hii\ region candidates. 
+We identify 11 Carbon RRL emission regions, all of which are spatially coincident with known \hii\ regions. 
+We detect RRL emission in the direction of 14 of the 32 supernova remnants (SNRs) found in the survey area.
+This RRL emission frequently has the same morphology as the SNRs. The RRL velocities give kinematic distances in agreement with those found in the literature, indicating that RRLs may form an additional tool to constrain distances to SNRs.
+Finally, we analyze the two bright star-forming complexes: W49, where we find widespread RRL emission at $\sim10$\kms and $\sim60$\kms, and W51, where we find diffuse RRL emission that may be due to leaking photons from \hii\ regions. 
+\end{abstract}
+
+\keywords{radio lines: ISM --- \hii\ regions --- catalogs --- surveys}
+
+\section{Introduction} \label{sec_intr}
+Radio recombination lines (RRLs) are ideal tracers of the ionized interstellar medium (ISM).
+In contrast to observations at optical and near infrared (IR) wavelengths, RRLs are essentially unaffected by interstellar extinction.  They therefore provide us with a probe of ionized gas in the Galactic plane, sampling the emission from \hii\ regions, photo-dissociation regions (PDRs), planetary nebulae (PNe), supernova remnants (SNRs), and diffuse ionized gas.  From the observed RRL parameters, one can derive the physical properties of the emitting regions, such as the electron temperature, electron density, emission measure (EM) from non-LTE models, the gas kinematics, and information about thermal and turbulent motions.
+
+There have been many pointed RRL surveys of individual Galactic \hii\ regions, beginning in the 1970s \citep[e.g.][]{Reifenstein1970,Wilson1970,Churchwell1978}.
+\citet{Lockman1989} cataloged 462 \hii\ regions in the northern sky by observing RRLs at 3\,cm wavelength toward Galactic continuum sources.
+\citet{Caswell1987} carried out a comprehensive \hii\ survey of 316 \hii\ regions in the southern sky using H109$\alpha$ \& H110$\alpha$.
+The Green Bank Telescope (GBT) \hii\ Region Discovery Survey \citep[GBT HRDS;][]{Bania2010,Anderson2011,Anderson2015} is the most recent RRL survey of targeted sources.
+Its sample was selected by examining the IR and radio emission of candidate \hii\ regions. 
+With the sensitivity and powerful back-end of the GBT, the HDRS has doubled the number of known \hii\ regions north of $\delta=-45\degr$, which is $340\degr \leq \ell \leq 240\degr$ at $b = 0\degr$.
+
+There are few unbiased surveys of RRL emission toward the Galactic plane \citep[e.g.,][]{Lockman1976,Anantharamaiah1986,Roshi2000}.
+\citet{Alves2010,Alves2012,Alves2015} used RRLs within the bandpass of the \hi\ Parkes All-Sky Survey \citep[HIPASS;][]{Staveley1996}, which covers $196\degr \leq \ell \leq 360\degr$ in the \textbf{third and fourth quadrants}, and $0\degr \leq \ell \leq 52\degr$ in the first quadrant, both within $|b| \leq 5\degr$.
+They observed H166$\alpha$, H167$\alpha$, and H168$\alpha$ at L-band with a spatial resolution of $14.4\arcmin$ and a velocity resolution of 20\kms. 
+Their typical rms noise in the stacked spectra is 4.5\,mK (6.4\,mJy\,beam$^{-1}$).
+The HI/OH/RRL survey with the Very Large Array \citep[THOR;][]{Beuther2016} also produced RRL maps, with a smoothed angular resolution of $40\arcsec$ and a velocity resolution of 10\kms. Their rms noise is $\sim2.3$\,mJy\,beam$^{-1}$ by stacking 10 RRLs.
+Being an interferometric survey, the THOR RRL data are not sensitive to emission from diffuse ionized gas.
+
+We introduced the Survey of Ionized Gas in the Galaxy, made with the Arecibo Telescope (SIGGMA) in \citet[hereafter ``Paper I'']{Liu2013}.
+SIGGMA is an RRL survey at 1.4\ghz\ that fully sampled the entire Galactic plane observable with the 305-m William E. Gordon Telescope at the Arecibo Observatory.
+With an rms noise of $\sim1$\,mJy\,beam$^{-1}$, SIGGMA remains the most sensitive fully-sampled RRL survey.
+
+In this paper, we present SIGGMA data from the inner Galaxy ($32 \degr \leq \ell \leq 70 \degr$).
+These inner-Galaxy data were collected commensally with the Arecibo pulsar survey ``P-ALFA'' \citep{Cordes2006, Lazarus2015}.
+In the outer Galaxy ($175 \degr \leq \ell \leq 207 \degr $), SIGGMA is observed commensally with the ALFA zone of avoidance (ZOA) survey \citep[][]{McIntyre2015}, which is still ongoing.
+The survey data from the outer Galaxy will be discussed in a future paper. 
+We describe the SIGGMA observations and data reduction in Section~\ref{sec_obs_data} and Section~\ref{sec_cata} gives the \hii\ region catalogues as the initial results of the survey. 
+The distribution of RRL emission and derived free-free emission along the Galactic disk are presented in Section~\ref{sec_gal}.
+Section~\ref{sec_crrl} and~\ref{sec_snr} discuss C-RRL regions and RRL detections toward SNRs.
+We present details of RRL investigations toward two major star-forming complexes in the survey area, W49 and W51, in Section~\ref{sec_indi}.
+The summary follows in Section~\ref{sec_summ}.
+
+\section{Observations and data reduction} \label{sec_obs_data}
+
+We describe the observations and data reduction in fully in Paper~I, and only discuss the most important details here.
+We used the seven-beam Arecibo L-band Feed Array (ALFA)\footnote{See \url{http://www.naic.edu/alfa} for more information.} receiver for the SIGGMA observations.
+ALFA's beam pattern consists of six beams surrounding a central beam.
+The average full width at half maximum (FWHM) of the seven beams is $\sim3\arcmin.4$.
+Three pointings of the ALFA beam pattern together form a beam-sampled grid pattern (see Figure~1 of Paper~I).
+The data are calibrated in the normal fashion by position switching. 
+We use off-positions that have the same declination, but are separated by five minutes in right ascension from the on-positions.
+After matching the on- and off-pairs, we correct the spectra using  $\frac{T_{ON}-T_{OFF}}{T_{OFF}}\times T_{sys}$, where $T_{ON}$ is the on-source spectrum and $T_{OFF}$ is the off-source spectrum.
+\textbf{The on-off calibration corrects the bandpass gain curve, also results that the survey data being insensitive to structure extended larger than $1\degr.25$ scale in R.A. direction.
+Therefore one should be careful to detect large scale warm ionized medium (WIM) with SIGGMA.}
+We then apply a gain calibration of 11\,K\,Jy$^{-1}$ for the central beam (Beam 0) and 8.5\,K\,Jy$^{-1}$ for Beams 1-6\footnote{See \url{http://www.naic.edu/alfa/performance/}}.
+The survey properties are given in Table~\ref{tab_survey}.
+
+Section~\ref{sec_obs} gives the observation status and shows the sky coverage of the survey at its current stage.
+\textbf{In Sections~\ref{sec_stack}, we describe the details of RRL stacking and show the quality of the spectra.
+Section~\ref{sec_cube} explain the method to produce data cubes.
+We discuss the radio frequency interference (RFI) removal technique in Section~\ref{sec_rfi}.}
+
+\begin{table}[tbhp]
+\centering
+\caption{Properties of the survey products \label{tab_survey}}
+\begin{threeparttable}
+\begin{tabular}{cc}
+\hline
+\hline
+ Parameter & Value\\
+\hline
+$\ell$  & $32\degr$ \textbf{to} $70\degr$ \\
+$b$  & $-1\degr.5$ \textbf{to} $+1\degr.5$ \\
+FWHM & $6\arcmin$ \\
+Spectral resolution & 5.1\kms \\
+Velocity range & $-300$ \textbf{to} $+300$\kms\\
+Integration time & 270\,s \\
+rms noise & 0.65\,mJy beam$^{-1}$ ($\sim6.5$\,mK) \\
+\hline
+\end{tabular}
+\end{threeparttable}
+\end{table}
+
+\subsection{Observational progress} \label{sec_obs}
+The inner Galaxy observations shown in Figure~\ref{fig_skycover} are over 96\% complete.
+The regions not yet observed are mostly located at Galactic latitudes $|b|>1\degr$.  The red dots show the pointings with unusable data.  The grid pattern of unusable data in the Galactic longitude range between 38$\degr$ and 43$\degr$ comes from ALFA Beam-6, which was malfunctioning in April 2011.
+The slant red streaks indicate unusable data due to strong RFI or high system temperature.
+
+As mentioned in Section~\ref{sec_intr}, P-ALFA is the primary survey for the inner Galactic plane observations, and SIGGMA is secondary.
+This means that SIGGMA has no direct control over which locations are observed.  Although the observations are still on-going, the areas that are not yet covered, as well as those in the \textbf{latitude} range of $|1.5|\degr$ to $|2|\degr$, will not be completed soon.  Nor will positions with unusable data be re-observed.
+Since the areas of missing data are of less interest (having fewer expected RRL detections), we are releasing the survey data at the current stage.
+
+\begin{figure}[hbtp]
+\epsscale{1.}
+\plotone{siggma_skycover.eps}
+\caption{SIGGMA sky coverage within the inner Galactic plane ($|b| \leq 1\degr.5$).
+Each blue dot stands for a pointing with good spectral quality.
+The red dots correspond to the pointings where the data are not usable and hence are not included in the final data products.
+Blank areas are yet to be observed.
+}\label{fig_skycover}
+\end{figure}
+
+\subsection{RRL stacking} \label{sec_stack}
+
+\textbf{We cut the corrected bandpass from each pointing into twelve H$n\alpha$ sub-bands (H$163\alpha - $H$174\alpha$).
+The frequency resolution is 21\,kHz, giving a velocity resolution of 4.2 \textbf{to} 5.1\kms.  
+The velocity range of each sub-band is $-300$ to $+300$\kms, which covers the observed velocity distribution of Galactic gas, provides adequate data points for baseline fitting, and also encompasses helium (offset by $-122$\kms\ from hydrogen) and carbon (offset by $-150$\kms) RRLs.
+After performing a 3rd order polynomial fitting individually, we resample the twelve segments to a common velocity grid of 5.1\kms\ resolution and then average all segments to achieve a higher signal-to-noise ratio ($S/N$).
+The stacked spectra frequently have irregular baseline ripples, especially when there is strong continuum emission within the beam.
+We fit a 5th order polynomial baseline to all stacked spectra after masking data from velocities between $-50$ and $+150$\kms.
+As an example, we show the final H$n\alpha$ spectrum toward the center of the W49A in Figure~\ref{fig_spec}.}
+
+
+\begin{figure}%[htbp]
+\begin{minipage}{.48\textwidth}
+\centering
+\plotone{siggma_spec.eps}
+\caption{The stacked H$n\alpha$ spectrum from the peak W49A region, with Gaussian fits.
+We label the two velocity components of H$n\alpha$ with by H$n\alpha$-1 and H$n\alpha$-2.
+}\label{fig_spec}
+\end{minipage}
+\hfill
+\begin{minipage}{.48\textwidth}
+\centering
+\plotone{siggma_rms_hist.eps}
+\caption{The rms distribution of the final spectra, calculated from the RFI- and line-free channels of spectra ($-300$ \textbf{to} $-200$\kms\ and $+200$ \textbf{to} $+300$\kms)
+}\label{fig_rms}
+\end{minipage}
+\end{figure}
+
+There are $\sim33,000$ raw stacked spectra in total.
+Figure~\ref{fig_rms} shows the rms noise distribution of the stacked spectra, which peaks at $\sim0.65$ mJy\, beam$^{-1}$ ($\sim6.5$\,mK, obtained by applying an average gain of 10 K\,Jy$^{-1}$). 
+This agrees well with the expected rms of $\sim0.5$ mJy\,beam$^{-1}$ given by Paper~I. 
+The extension toward higher values in the rms distribution is caused by positions with bright continuum emission.
+
+Figure~\ref{fig_rms_glat} gives the rms distribution as a function of Galactic longitude and latitude.
+Spectra within $|b| \leq 0\degr.5$ are more likely to have high rms due to the higher density of continuum sources.
+We see this same pattern in the plot of rms versus Galactic longitude, as the higher rms values correspond to locations of large massive star formation complexes.
+
+\begin{figure}[htbp]
+\epsscale{0.5}
+\plotone{siggma_rms_glon.eps}
+\plotone{siggma_rms_glat.eps}
+\caption{The rms distribution versus Galactic longitude (left) and latitude (right).
+The open red box is the median of the 0$\degr$.1 binned rms values and the red bars are their standard deviations.
+}\label{fig_rms_glat}
+\end{figure}
+
+\subsection{Data cubes} \label{sec_cube}
+\textbf{
+After stacking, we use the software package \software{Gridzilla \citep{Barnes2001}} to grid the stacked spectra into data cubes.
+Each cube is $5\degr \times 3\degr$ with a pixel size of $1\arcmin \times 1 \arcmin$, and has 5.1\kms\ channel spacing covering $-300$ to $+300$\kms.}
+The beam weighting is set to be proportional with the beam FWHM of $3\arcmin.4$.
+We apply a Gaussian smoothing with the kernel FWHM of $6\arcmin$, $\sim2$ beam widths to fill in gaps where we lack usable data.
+The spectrum of each pixel is then generated from the weighted median of the stacked spectra within a cut-off radius of $4\arcmin$.
+These cubes of stacked RRL emission are the primary data product of SIGGMA, and are the basis of all analysis that follows in this paper.
+
+\subsection{Bad data removal} \label{sec_rfi}
+RFI is prevalent in the SIGGMA data, and RFI removal is the first step of our data reduction process.
+We first excise strong and broad RFI \textbf{from the whole bandpass} by removing spectral values more than 5 times the spectral rms about the median value, which is obtained using a median filter of width 300 channels.
+The spectral rms is calculated from RFI free channels in the velocity range of $-300$ to $-200$\kms\ and $+200$ to $+300$\kms.
+During line stacking (Section~\ref{sec_stack}), we apply a second median filter to the twelve sub-bands. 
+\textbf{
+This is to remove any weak and narrow RFI that remains.
+The filter parameters are set to 15 channels in width and 10 times of the spectral rms criterion. 
+The RRL signal remains unaffected with this configuration.
+}
+
+Some spectra show strong baseline ripples or abnormal noise not identified by the median filter method.
+We set a rms threshold to remove such spectra from further analyses.
+Spectra with strong continuum sources also have high rms noise. 
+So as to not exclude such spectra, which also frequently have true line emission, we examine the difference of the rms from the central portion of the spectra (from $-200$ to $+200$\kms) and to that of the edges.
+About 7\% of the spectra are so affected.
+
+\section{The catalog of \hii\ regions} \label{sec_cata}
+
+SIGGMA provides an unbiased look at the RRL properties of discrete \hii\ regions.
+Using {\it Wide-Field Infrared Survey Explorer} ({\it WISE}) data, \citet{Anderson2014} created a catalog of over 8000 Galactic \hii\ regions and \hii\ region candidates by searching for their characteristic mid-infrared (MIR) morphology.  This catalog is called the ``{\it WISE} catalog of Galactic \hii\ regions'' (hereafter simply the ``{\it WISE} catalog'').
+The {\it WISE} catalog contains four types of objects, labeled as the ``known'', ``group'', ``candidate'', and ``radio quiet.''
+``Known'' regions have previously-detected RRL or H$\alpha$ emission, ``group'' regions are associated with known regions but lack spectroscopic observations, ``candidate'' regions have radio continuum and \textbf{MIR} emission but no ionized gas spectroscopic detections, and ``radio quiet'' regions only have \textbf{MIR} emission with the characteristic \hii\ region morphology.
+The {\it WISE} catalog provides the known properties of its sources, such as their radii, distances, LSR velocities, etc.
+
+We extract the spectrum toward {\it WISE} catalog \hii\ regions from SIGGMA data by averaging SIGGMA spectra over the each source's areal extent as defined in the catalog.
+Then we perform an automatic Gaussian fitting on the averaged spectrum of each source. 
+We perform these fits over the LSR velocity range from $-10$\kms\ to $+120$\kms, and allow RRL line FWHM values of 12\kms\ to 100\kms. We only count as detections lines with $S/N \geq 5$.  Because the weaker Helium RRLs do not meet this signal-to-noise criterion, even for the brightest regions in the survey, they are naturally excluded.
+Carbon RRLs are excluded from the fits by the velocity and line width range we used.
+
+We use a chi-square test and an F-test to evaluate the fitting of multiple velocity components.
+For each spectrum, we perform one-, two-, and three-component Gaussian fits separately, and calculate the reduced chi-square values.
+If the one-component Gaussian fit has the smallest reduced chi-square value that is larger than unity, we confirm it as the best fitting.
+If the multi-component (two or three) Gaussian fits have the smallest larger-than-unity reduced chi-square value, we use an F-test to assess if it is significantly better than the fits with fewer components.
+If the calculated F-test probability is less than 0.05, we confirm it as the best fitting.
+Otherwise, we confirm the fit with one fewer components as the best fitting.
+\textbf{In addition to the automatic fitting procedure, we check the spectra by hand to keep the signals locating out of the initial fitting ranges(i.e. RRLs with V$_{LSR} < -10$\kms).}
+
+Within the survey zone of SIGGMA, there are 329 ``known'' \hii\ regions.
+We detected H-RRLs in the direction of 244 known \hii\ regions; 61 have two velocity components and 7 have three velocity components.
+Figure~\ref{vlsr_map} shows good agreement between SIGGMA line velocities with respect to local standard of rest (LSR) and those compiled in the WISE catalog.
+Table~\ref{tab_hii_k_sample} lists the first 10 rows of RRLs detected toward ``known'' WISE \hii\ regions.
+Columns 1, 2, and 3 give the region names with their Galactic coordinates.
+Columns 4, 5, and 6 show the fitted line profile parameters. 
+Columns 7 and 8 are the rms and $S/N$ of the spectrum.
+We provide the full catalogue in Table~\ref{tab_HII_known} in Appendix~\ref{appe:cata}.
+
+\begin{figure}[htbp]
+\epsscale{0.6}
+\plotone{siggma_wise_vlsr.eps}
+\caption{Known \hii\ region RRL $V_{LSR}$ values compared with
+those derived in SIGGMA data.  The dashed line shows a 1:1 relationship.}\label{vlsr_map}
+\end{figure}
+
+We also provide line parameters in the direction of ``candidate'' \hii\ regions, for which no ionized gas spectroscopic detections exist in the literature.
+There are 165 ``candidate'' sources observed by SIGGMA, of which we detect RRL emission in the direction of 79.
+We give the first 10 samples of SIGGMA detected ``candidate'' \hii\ region RRL properties in Table~\ref{tab_hii_c_sample} (see Table~\ref{tab_HII_candidate} in Appendix~\ref{appe:cata} for the full ``candidate'' catalogue).
+
+\textbf{There are two possible reasons for the non-detection towards known \hii\ regions. Three fourths of the 85 non-detected known \hii\ regions are with angular size less than 2$\arcmin$, while the ALFA beam is 3$\arcmin.4$. So SIGGMA may not be as sensitive as to targets with small angular sizes. Also, one can see from the actual data coverage of the survey (see Figure~\ref{fig_skycover}), that there are considerable blank area. This may be the other reason for the non-detection issue. 
+Although the high sensitivity enabled SIGGMA to detect RRLs towards candidate \hii\ regions. Same reason applies to the non-detected candidates. High sensitivity interferometry observations can be more effective detecting small angular size targets. }
+It is possible that RRL detections toward a source come from nearby regions within the telescope beam, or from diffuse ionized gas along the line of sight.
+We therefore note \textbf{in the Tables} which SIGGMA detections arise from positions with multiple ``known'' or ``candidate'' \hii\ regions within the ALFA beam.
+We also note cases where integrating over the entire \hii\ region also includes positions from overlapping ``known'' or ``candidate'' \hii\ regions.
+Sources in the ``group'' sample are found toward known regions, which confuses the interpretation of their spectra.
+We therefore do not provide line parameters for group \hii\ regions.
+We also do not provide line parameters for the radio quite sample as the SIGGMA line emission is too faint for detections.
+
+Due to baseline structure in SIGGMA data, the line parameters for faint \hii\ regions can be difficult to determine (see Section~\ref{sec_rfi}).
+In Table~\ref{tab_HII_known} and~\ref{tab_HII_candidate} there are some items with line width $>50$\kms, which are not typical values toward \hii\ regions. 
+Although the detection criterion of $S/N >5$ should result in reliable detections, bad baselines may introduce uncertainty in the derived line parameters.
+We checked the broad line profiles by hand and removed the ones that had characteristics similar spectra with bad baselines.
+We did keep some broad lines, which may be blended line components not separable with our rather low velocity resolution.
+
+There are also sources with FWHM $\leq$15 \kms\ in Table~\ref{tab_HII_known} and~\ref{tab_HII_candidate}.
+\citet{Anderson2018} reported narrow-RRL detections with FWHM $<$10 \kms\ from \textbf{large angular size} \hii\ regions.
+They suggested that the narrow lines could come from interactions with molecular clouds or from partially ionized zones within the \hii\ region PDRs.
+They also indicated that the narrow-RRL components may be caused by WIM along the line of sight, because the narrow-RRL sources in their study always have multiple velocity components.
+Similarly, most of the narrow SIGGMA detections have multiple velocity components, which favors the WIM-related interpretation.
+However, it is also possible that the narrow lines are emitted by \hii\ regions, within which the emitting gas has low turbulence.
+
+\begin{table}[htbp]
+\centering
+\caption{RRL emission from ``known'' \hii\ regions}\label{tab_hii_k_sample}
+\begin{threeparttable}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}*{8}{c}}
+\hline
+\hline
+Name & $l$ & $b$ & Peak& V$_{LSR}$& FWHM& RMS& $S/N$\\
+&$^\circ$&$^\circ$&mJy\,beam$^{-1}$&km\,s$^{-1}$&km\,s$^{-1}$&mJy\,beam$^{-1}$& \\
+\hline
+G032.800$+$00.190     &32.800&	$+$0.190	&9.16	$\pm$ 1.01	&14.9	$\pm$ 1.2	&22.1	$\pm$ 2.8	&1.65	&8.9 \\ 
+G032.823$+$00.072$^a$ &32.824&	$+$0.072	&30.40	$\pm$ 2.89	&106.7	$\pm$ 1.2	&25.3	$\pm$ 2.8	&2.76	&19.0\\
+G032.835$+$00.017     &32.835&	$+$0.017	&191.52	$\pm$ 22.13	&109.8	$\pm$ 1.8	&33.3	$\pm$ 4.8	&28.51	&13.2\\
+G032.982$-$00.338     &32.983&	$-$0.338	&17.08	$\pm$ 2.16	&50.8	$\pm$ 1.2	&20.6	$\pm$ 3.3	&2.56	&10.3\\
+G033.051$-$00.078     &33.051&	$-$0.078	&26.21	$\pm$ 1.76	&103.9	$\pm$ 0.9	&28.0	$\pm$ 2.3	&0.77	&61.2\\
+G033.080$+$00.073     &33.080&	$+$0.073	&11.65	$\pm$ 0.97	&102.2	$\pm$ 1.1	&27.8	$\pm$ 2.7	&1.22	&17.3\\
+G033.142$-$00.088$^a$ &33.142&	$-$0.087	&20.93	$\pm$ 1.52	&103.2	$\pm$ 0.9	&26.4	$\pm$ 2.2	&1.19	&30.9\\
+G033.176$-$00.016     &33.176&	$-$0.015	&27.82	$\pm$ 2.09	&105.1	$\pm$ 1.0	&26.2	$\pm$ 2.3	&1.63	&29.9\\
+G033.205$-$00.013     &33.205&	$-$0.012	&14.64	$\pm$ 2.52	&106.5	$\pm$ 1.1	&13.1	$\pm$ 2.6	&2.46	&7.4\\
+G033.263$+$00.066     &33.263&	$+$0.067	&11.51	$\pm$ 1.06	&111.3	$\pm$ 1.9	&42.2	$\pm$ 4.5	&1.40	&18.2\\
+\hline
+\end{tabular*}
+\begin{tablenotes}
+      \small
+      \item a. Detections arise from positions with multiple ``known'' or ``candidate'' \hii\ regions within the ALFA beam.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{RRL emission from ``candidate'' \hii\ regions }\label{tab_hii_c_sample}
+\begin{threeparttable}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}*{8}{c}}
+\hline
+\hline
+Name & $l$ & $b$ & Peak& V$_{LSR}$& FWHM& RMS& $S/N$\\
+&$^\circ$&$^\circ$&mJy\,beam$^{-1}$&km\,s$^{-1}$&km\,s$^{-1}$&mJy\,beam$^{-1}$& \\
+\hline
+G033.024$-$00.366     &33.025&$-$0.366&26.15	$\pm$2.02&50.8	$\pm$1.2	&28.2	$\pm$3.0	&2.61	&18.2\\
+                      &33.025&$-$0.366&11.14	$\pm$1.76&104.6	$\pm$3.5	&43.1	$\pm$11.0	&2.61	&9.6\\
+G033.306$-$00.150$^a$ &33.307&$-$0.150&8.23	$\pm$0.70&106.8	$\pm$1.2	&28.4	$\pm$2.8	&0.55	&27.5\\
+G033.734$-$00.316$^a$ &33.735&$-$0.315&5.34	$\pm$0.68&52.7	$\pm$1.2	&20.3	$\pm$3.3	&0.71	&11.6\\
+G034.130$-$00.174$^b$ &34.131&$-$0.173&12.77	$\pm$0.78&50.1	$\pm$0.6	&28.1	$\pm$2.0	&0.71	&32.4\\
+                      &34.131&$-$0.173&3.12	$\pm$0.89&90.7	$\pm$1.8	&15.7	$\pm$5.3	&0.71	&5.9\\
+G034.174$-$00.086$^b$ &34.175&$-$0.085&10.50	$\pm$0.99&48.2	$\pm$0.9	&29.1	$\pm$3.2	&0.80	&24.3\\
+                      &34.175&$-$0.085&4.59	$\pm$1.06&92.2	$\pm$1.3	&13.1	$\pm$3.8	&0.80	&7.1\\
+G034.190$-$00.063$^b$ &34.191&$-$0.063&10.26	$\pm$0.90&48.9	$\pm$0.8	&30.8	$\pm$2.8	&0.74	&26.4\\
+                      &34.191&$-$0.063&4.32	$\pm$0.92&90.5	$\pm$1.2	&14.3	$\pm$3.6	&0.74	&7.6\\
+\hline
+\end{tabular*}
+\begin{tablenotes}
+      \small
+      \item a. Detections arise from positions with multiple ``known'' or ``candidate'' \hii\ regions within the ALFA beam.
+      \item b. Detections integrated over the entire \hii\ region also includes positions from overlapping ``known'' or ``candidate'' \hii\ regions.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\section{Distributions along the Galactic Plane} \label{sec_gal}
+\subsection{RRL intensity} \label{sec_gal_rrl}
+Figure~\ref{fig_rrl_map} shows the RRL integrated intensity maps in 20\kms\ intervals, smoothed to $5\arcmin \times 5\arcmin$ pixels.
+We can see both individual bright sources and extended structure in these maps.
+\textbf{The RRL emission in the range of $65\degr \leq \ell \leq  70\degr$ is rare. 
+We only detect one \hii\ region candidate within this range, which is listed Table~\ref{tab_HII_candidate}.}
+Some bright sources that appear at all velocity ranges are caused by baseline distortions from their strong continuum emission.
+The two bright spots centered at G34.8$-$0.3 and G34.6$-$0.6 are introduced by the broad line profile observed toward the SNR W44 (see Section~\ref{sec_snr}).
+
+\begin{figure}[htbp]
+\epsscale{1.2}
+\plotone{siggma_rrl_map.eps}
+\caption{Integrated RRL intensity maps over various velocity ranges.
+}\label{fig_rrl_map}
+\end{figure}
+
+Figure~\ref{lv_map} shows the longitude-velocity diagram of RRL intensity.
+We smooth the SIGGMA data cube to $1\degr$ resolution in Galactic longitude, and integrate over $|b| \leq 0\degr.5$.
+The vertical stripes are due to bright massive star formation regions.  Since RRLs are $\sim25$\kms\ wide, they have a large vertical extent in this figure.
+For comparison with the molecular gas, we overlap the CO $1-0$ emission \citep{Dame2001} integrated over the same Galactic latitude range.
+The RRL and CO emission are both bright around massive star formation region complexes, but on the whole there is a poor correlation between the CO and RRL gas.
+The strong feature at Galactic longitude of 34$\degr$ is caused by the SNR W44 (see Section~\ref{sec_snr}) and some features in the negative velocity range are from carbon and helium RRLs.
+\begin{figure}[htbp]
+\centering
+\epsscale{1.2}
+\plotone{siggma_lv_map.eps}
+\caption{Longitude-velocity map of  SIGGMA data (color) with CO contours \textbf{from the survey of \citep{Dame2001}.} The contour levels are 0.01, 1.0, 7.5, 15.0, 22.5, 30.0, 37.5, 45.0, 52.5, and 60.0 K.}\label{lv_map}
+\end{figure}
+
+\subsection{Free-free emission} \label{sec_gal_free}
+Although radio continuum data for the Galactic plane at 1.4\,\ghz\ have contributions from both thermal and non-thermal sources, RRL emission reveals only the thermal component.
+\citet{Alves2012} described the derivation of the Galactic free-free emission using their RRL observations.
+Similarly, one can also calculate the continuum temperature of thermal emission\textbf{,} by assuming an electron temperature, which is expressed as \citep{Mezger1967a, Lockman1978, Quireza2006a}:
+\begin{equation}
+  T_C=
+  \frac{(1+0.08)}{6985}\cdot a(T_e) \cdot T_e^{1.15} \cdot \nu _{GHz}^{-1.1} \cdot \int T_L dV,
+  \label{equ_temp}
+\end{equation}
+where $V$ is in \kms, $a(T_e) \simeq 0.97$ at 1.4\ghz, and $\nu_{GHz}$ is 1.4 in our case.  This equation assumes a helium to hydrogen ionic abundance of 0.08.
+Using Equation~\ref{equ_temp} we compute the radio continuum temperature from thermal free-free emission alone using the SIGGMA integrated intensity (moment 0) maps, and assuming an constant electron temperature of 8000\,K.
+Figure~\ref{fig_gal_free} shows the result of the thermal emission along the Galactic plane.
+The figure is smoothed to $0\degr.5 \times 0\degr.5$ resolution.
+\textbf{Correlations can be seen between the free-free emission map and the distribution of known sources, including mostly \hii\ regions and some of the SNRs.
+We also compare the SIGGMA $T_C$ map (Figure \ref{fig_gal_free}) with that derived from RRL HIPASS \cite[see Figure 7 in][]{Alves2015}. The co-covering Galactic longitude range for the two surveys is from $52\degr$ to $34\degr$. We find that all of the free-free emission revealed in the RRL HIPASS map have corresponding features in the SIGGMA map. There are more detailed and weaker features identified by SIGGMA with higher resolution and sensitivity.
+}
+To examine the general trend of the thermal emission as a function of Galactic longitude, we plot the flux averaged over $|b| \leq 1\degr$ (see Figure~\ref{fig_gal_plot}). 
+The median flux is less affected by bright star-forming regions, and therefore better traces the overall emission from the Galactic plane.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width = 7in]{temperature_thermal_map.eps}
+\caption{\textbf{Free-free} continuum intensity.
+$T_{C}$ is calculated following Equation~\ref{equ_temp}, using the SIGGMA H-RRL 0$^{th}$ moment map (integrated over $-20$ to $+120$\kms) and assuming $T_e = 8000 K$.
+The unit for the map is in Kelvin.
+The \textbf{blue} circles are ``known'' HII regions from the WISE catalog and the green circles are SNRs from the Green catalog (see Section~\ref{sec_snr}).
+\textbf{The sizes of the circles are proportional to the angular sizes of the sources, which are given by the catalogs.}
+The bright spots between $55\degr \leq \ell \leq 57\degr$ are likely artificial effects due to missing data (see Figure~\ref{fig_skycover}).}
+\label{fig_gal_free}
+\end{figure}
+\begin{figure}[bhpt]
+\centering
+\includegraphics[width = 6in]{temperature_thermal_plot.eps}
+\caption{\textbf{Free-free continuum intensity} as a function of Galactic longitude. The red line is the mean temperature over $|b|\leq 1\degr$. The blue line is the median value over the same range.}
+\label{fig_gal_plot}
+\end{figure}
+
+\section{Carbon RRL emission regions} \label{sec_crrl}
+
+C-RRLs are offset by $\sim-150$\kms\ from H-RRLs for the same principal quantum numbers.
+SIGGMA detects H-RRL emission \textbf{mostly from the velocity range of $\sim-10$ to $+150$\kms} (cf.~Figure~\ref{lv_map}).
+To identify C-RRL emission regions, we modify the SIGGMA data cubes by shifting the velocity to center at the C-RRL rest frequency.
+We create C-RRL moment maps from the shifted cubes and detect C-RRL emission from 11 spatial locations.
+\textbf{We obtained the averaged C-RRL and H-RRL spectra for each region over an radius, defined by the central emitting area.}
+Table~\ref{tab_crrl} contains information about the C-RRL regions.
+In this table, we list the region name, the Galactic coordinate centroid, the angular size, the WISE catalog of \hii\ regions that are spatially coincident, the \textbf{velocity} integrated C-RRL intensity, the \textbf{C- to H-RRL} integrated intensity ratio, and a qualitative assessment of the C-RRL data quality (A=highest quality, C=low quality).
+Since the line widths for C-RRLs are generally $\lesssim10$\kms, the SIGGMA velocity resolution likely broadens the C-RRLs and decreases their intensities.  We thus provide integrated line intensities in Table~\ref{tab_crrl} instead of peak line intensities.
+
+Carbon RRL emission is thought to arise from PDRs, and can be used to investigate PDR properties \citep[][etc.]{Pankonin1977,Natta1994,Roshi2007}.
+In some cases the carbon RRL emission is found to be associated with cold \hi\ regions \citep{Roshi2011}.
+Polycyclic aromatic hydrocarbon (PAH) molecules in PDRs emit at 8.0$\um$ \citep{Watson2008,Watson2009}, and we therefore expect a good agreement between C-RRL and 8.0$\um$ emission.
+We compare the C-RRL emission distribution with the {\it Spitzer} 8.0\,\micron\ IR data from the Galactic Legacy Infrared Midplane Survey Extraordinaire (GLIMPSE) Legacy Program \citep{Benjamin2003,Churchwell2009}.
+Figure~\ref{fig_crrl-g342} gives an example of those C-RRL regions.
+We also include in this figure 24$\um$ \textbf{and 4.5$\um$ {\it Spitzer} data from the GLIMPSE and} MIPSGAL survey \citep{Carey2009, Gutermuth2015}.
+This figure shows the spectral grid overlying the integrated C-RRL intensity map, and contours of the integrated C-RRL emission over the {\it Spitzer} three-color map (red: 24\,$\um$, green: 8\,$\um$, blue: 4.5\,$\um$).
+\textbf{
+For the source G34.2$+$0.2, the integrated C-RRL distribution matches with the corresponding \hii\ region as defined by the IR emission.
+Comparing Figure~\ref{fig_crrl-g342} (b) and Figure~\ref{fig_crrl-g342} (d), we can see an offset of the C-RRL emission peak from that of the H-RRL emission.
+This may imply the PDR origin of the C-RRL emission.
+We note that the offset is less than half of the ALFA beam size.
+Thus the uncertainty of the offset may be considerable.
+}
+We find an extended C-RRL structure to the north, but the 8.0$\um$ emission is weak there, making the PDR origin of this emission doubtful.
+\textbf{
+However, the weak distribution above 0.3$\degr$ in Galactic latitude is possible to be introduced by the baseline noise. Further observational confirmations are needed. }
+More figures of detected C-RRL regions are given in Appendix~\ref{appe:crrl}.
+For G34.7$-$0.6 and G35.1$-$0.7 (see Figures~\ref{fig_crrl-g347} and~\ref{fig_crrl-g351}), we see the C-RRL emission regions are offset relative to the \hii\ regions.
+\textbf{\cite{Alves2015} has detected stronger C-RRL emission outside the continuum peaks of \hii\ regions towards W41 (G23.4+0.0) and W42 (G25.3-0.1).} 
+The background of spectral grid maps of some C-RRL regions show that many of the C-RRL emission regions have an annular structure, with stronger emission regions surrounding weaker emission regions (see Figures~\ref{fig_crrl-g389},~\ref{fig_crrl-g536},~\ref{fig_crrl-g609},~\ref{fig_crrl-g614}, and~\ref{fig_crrl-g631} in Appendix~\ref{appe:crrl}).
+This may imply the emission feature from PDRs, although the morphologies do not agree with that seen at 8.0\,\micron\textbf{, at which wavelength the PAH emission is commonly used to identify PDR shells \citep{Watson2009}}.
+
+\begin{table}[htbp]
+\caption{C-RRL emission regions}\label{tab_crrl}
+\begin{threeparttable}
+\begin{tabular*}{\textwidth}{cccclclc}
+\hline
+\hline
+Name& $l$& $b$&Radius$^a$&\hii\ Region&$\int I_{CRRL}dV$& C/H$^b$& Quality$^c$\\
+&deg.&deg.&deg.&&Jy\kms&&\\
+\hline
+G34.2$+$0.2& 34.24& $+$0.15& 0.05&G034.256$+$00.136 (NRAO584) &0.07& 0.03 & B\\
+G34.7$-$0.6& 34.73& $-$0.58& 0.05&G034.757$-$00.669           &0.15& 0.03 & C\\
+G35.1$-$0.7& 35.12& $-$0.71& 0.03&G035.126$-$00.755           &0.12& 0.38 & B\\
+G38.9$-$0.4& 38.93& $-$0.42& 0.05&G038.926$-$00.389           &0.03& \nodata$^d$& B\\
+G43.2$-$0.0& 43.16& $-$0.00& 0.05&G043.170$-$00.004 (W49A)    &0.58& 0.08 & A\\
+G45.5$+$0.0& 45.46& $+$0.07& 0.05&G045.453$+$00.044 (K47)     &0.10& 0.08 & B\\
+G49.5$-$0.4& 49.49& $-$0.40& 0.05&G049.484$-$00.391 (W51A)    &0.83& 0.07 & A\\
+G53.6$+$0.0& 53.57& $+$0.02& 0.03&G053.541$-$00.011           &0.05& 0.50 & B\\
+G60.9$-$0.1& 60.88& $-$0.11& 0.05&G060.881$-$00.135 (S87)     &0.03& 0.30 & A\\
+G61.4$+$0.1& 61.44& $+$0.13& 0.05&G061.473$+$00.094 (S88)     &0.24& 0.24 & B\\
+G63.1$+$0.4& 63.14& $+$0.38& 0.05&G063.164$+$00.449 (S90)     &0.10& 0.06 & C\\
+\hline
+\end{tabular*}
+\begin{tablenotes}
+      \small
+      \item a. \textbf{The radius of the region, which is used to produce the averaged spectrum.}
+      \item b. Integrated intensity ratio of H-RRL and C-RRLs.
+      \item c. Qualitative metric of data quality (A=high quality, C=low quality)
+      \item d. There is no valid H-RRL detection since a H-RRL signal is in the off position.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\subfloat[SIGGMA spectral grid]{\includegraphics[width = 3.3in]{G34.2+0.2_ca_spec.eps}}
+\subfloat[Infrared color map  ]{\includegraphics[width = 3.3in]{G34.2+0.2_rgb_contour.eps}}\\
+\subfloat[SIGGMA spectral grid]{\includegraphics[width = 3.3in]{G34.2+0.2_ha_spec.eps}}
+\subfloat[Infrared color map  ]{\includegraphics[width = 3.3in]{G34.2+0.2_ha_rgb_contour.eps}}\\ 
+\caption{The C-RRL region G34.2+0.2.
+          (a) The C-RRL grid with velocity from $-50$ to $+150$\kms.
+	  The background is the integrated C-RRL intensity over 30 to 70\kms.
+	  (b) The IR RGB map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid with integrated C-RRL contours.
+	  The contour levels are 2, 4, 6, 8, 10, 12, 14, 16 mJy\,beam$^{-1}$\kms.
+	  (c) The H-RRL grid with velocity from $-50$ to $+150$\kms.
+	  The background is the integrated H-RRL intensity over 0 to 100\kms.
+	  (d) The IR RGB map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated H-RRL contours.
+	  The levels are 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6 Jy\,beam$^{-1}$\kms.
+	  }
+\label{fig_crrl-g342}
+\end{figure}
+
+\section{RRLs toward Galactic supernova remnants} \label{sec_snr}
+
+SNRs are non-thermal radio sources, and are not expected to have strong RRL emission.
+\citet{Downes1974} conducted a survey of H$134\alpha$ toward SNRs using the Effelsberg 100-m telescope and reported few detections save for toward W49B.
+Several other SNRs have RRLs detected in their directions, namely: H$166\alpha$ toward W44 \citep{Bignell1973}, H-RRLs toward 3C\,391 and W49B \citep{Cesarsky1973a,Pankonin1975}.
+\citet{Cesarsky1976} also reported C-RRL detections (C$157\alpha$) toward five Galactic SNRs.
+
+We examine RRL emission in the direction of Galactic SNRs with SIGGMA data.
+\citet[][hereafter the ``Green catalog'']{Green2014} lists 32 SNRs in the SIGGMA survey zone.
+Some SNRs with large radii are faint and some are cospatial with one or more \hii\ regions; these are not ideal candidates for SIGGMA RRL detections.
+By examining the continuum emission at 1.4\ghz\ from the VLA Galactic Plane Survey \citep[VGPS,][]{Stil2006}, we determine the angular extent and then extract the \textbf{mean spectrum from SIGGMA data} for each of the 14 SNRs (see Table~\ref{tab_snr}).
+\textbf{The angular sizes given by the Green catalog are correspond to extended structure of the sources. 
+To avoid the RRL signal from diffuse ISM when averaging, we adopted rather compact region instead.
+The averaged spectrum for each source is then fitted using the same Gaussian fitting technique as we applied to the \hii\ regions.}
+In Table~\ref{tab_snr}, we list the names of the SNRs, the Galactic coordinate of the central region and its radius, the LSR velocity of the peak H-RRL emission components, the FWHM of the RRL velocity components, and the calculated near and far kinematic distances using the \citet{Reid2014} rotation curve.
+For all regions, one of the two kinematic distances agrees well with the distance from the literature.
+
+The line widths of the detected H-RRLs toward SNRs are broad. 
+This implies that the temperature and/or turbulent motions of the plasma are higher than that of \hii\ regions.
+The broad line width, however, makes the signal  more likely to be confused with baseline ripples.
+The high continuum intensity of the SNRs may contribute to baseline issues. 
+Uncertainties in derived RRL parameters toward SNRs are therefore larger than those of \hii\ regions.
+The formal fitting errors of the line profiles are relatively small compared to the larger uncertainties due to baseline structure; we do not attempt to quantify the parameter uncertainties in Table~\ref{tab_snr}.
+Most detected SNRs show a broad line profile, with line widths $>50$\kms.
+\textbf{The agreement between the spectra of the different SNRs implies that despite the baseline uncertainties, these detections are real.}
+
+Early studies have posited three possible origins for RRL emission in the direction of SNRs.
+\citet{Bignell1973} studied the RRL emission towards W44 and suggested that the observed H$166\alpha$ emission may be due to gas associated with and ionized by the supernova explosion of W44.
+By comparing the RRL intensity and the low-frequency absorption toward 3C\,391, \citet{Cesarsky1973b} suggested that the RRL emission could possibly originate in cold ISM ($T_e \leq 400$\,K).
+However, \citet{Pankonin1976} investigated RRLs toward W49B and concluded that the spectral lines were likely from low-brightness \hii\ regions along the line of sight.
+At frequencies lower than 2\ghz, stimulated emission plays an important role in RRL emission, and therefore the bright SNR continuum may stimulate the emission from foreground gas.
+
+Figure~\ref{fig_snr-g347} shows the RRL detection toward SNR G34.7$-$0.4 (W44) with the SIGGMA spectral grid overlaid on the integrated H-RRL intensity map (left) and VGPS continuum with integrated RRL contours overlaid (right).
+The spectral profiles vary over the source.
+Within the central region, the lines are broad with strongly varying peak intensities.
+At the northeast and southeast edge there are \hii\ regions (blue circles in Figure~\ref{fig_snr-g347} (b)), the spectra are combinations of broad and narrow Gaussian features.
+The H-RRL morphology has a ring-like shape around the periphery of the SNR, indicating that a shell of gas around the expanding edge of W44 may be ionized by photons produced by the supernova explosion.
+\textbf{W44 is located adjacent to giant molecular clouds \citep{Denoyer1983}, whose radio emission is with bright shell-like morphologies \citep{Jones1993}.
+The interaction between W44 and the dense molecular clouds is revealed by shocked molecular gas studies \citep{Seta2004, Reach2005}. }
+Figures for other SNRs listed in Table~\ref{tab_snr} are given in Appendix~\ref{appe:snr}.
+
+Since SIGGMA data are of low frequency (1.4\ghz) RRL emission and thermal emission from SNRs is rare \citep{Cruciani2016}, the SIGGMA-detected RRLs toward SNRs are likely due to stimulated emission from the background synchrotron radiation of the SNRs.
+The RRL-emitting gas may be physically associated with the SNRs, or could exist somewhere else along the line of sight.
+The morphology of the RRL emitting regions toward the SNR sample, as well as their velocities and line widths, may allow for more detailed studies on the origin of RRLs toward SNRs.
+
+\begin{table}[htbp]
+\renewcommand{\arraystretch}{0.8}
+\caption{ H-RRL detections toward SNRs}\label{tab_snr}
+\begin{threeparttable}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}*{12}{c}}
+\hline
+\hline
+GName$^a$&Other Name& $l$& $b$& Radius&V$_{LSR}$&FWHM&D$_{N}$&D$_{F}$&D& Quality$^b$\\
+&& deg.&deg.& deg.& \kms&\kms&kpc&kpc&kpc&\\
+\hline
+G33.6$+$0.1&Kes 79 & 33.67& $+$0.03& 0.11 &106.3&26.1 &6.4 &7.5  &7.1$^{[1]}$     &C\\ 
+G34.7$-$0.4&W44    & 34.67& $-$0.42& 0.32 &47.7 &114.3& 2.9   &10.8 &2.9$^{[2]}$     &B\\
+           &       &      &        &      &49.4 &11.6 &3.0 &10.7 &&\\
+           &       &      &        &      &138.0&80.0 & 6.8   & 6.8    &&\\
+G35.6$-$0.4&       & 35.60& $-$0.43& 0.13 &53.7 &23.5 &3.2 &10.3 &3.6$^{[3]}$     &A\\ 
+G36.6$-$0.7&       & 36.59& $-$0.69& 0.28 &40.6 &64.4 &2.5    &10.8     &\nodata         &B\\
+           &       &      &        &      &57.5 &20.2 & 3.4   & 9.9    &&\\
+           &       &      &        &      &146.0&71.5 &6.7 &6.7 &&\\
+G39.2$-$0.3&3C 396 & 39.23& $-$0.32& 0.08 &12.8 &34.0 &0.8    &9.2     &$\leq11.3^{[4]}$&A\\ 
+           &       &      &        &      &61.2 &24.5 &3.7 &9.2  &&\\
+G40.5$-$0.5&       & 40.51& $-$0.51& 0.23 &45.3 &36.1 &2.8 &9.8 &\nodata         &C\\
+G41.1$-$0.3&3C 397 & 41.12& $-$0.31& 0.05 &62.1 &24.5 &3.8 &8.7 &10.3$^{[5]}$    &A\\ 
+G41.5$+$0.4&       & 41.46& $+$0.39& 0.12 &19.2 &18.2 &1.3 &11.2 &10.3$^{[6]}$    &A\\ 
+G43.3$-$0.2&W49B   & 43.27& $-$0.19& 0.07 &9.1  &42.5 &0.6 &11.5     &7.5$^{[1]}$,10$^{[7]}$      &A\\ 
+           &       &      &        &      &62.7 &24.7 &4.1 &8.0  &&\\
+G45.7$-$0.4&       & 45.56& $-$0.35& 0.21 &65.1 &18.6 &4.8 &6.8  &\nodata         &B\\
+           &       &      &        &      &86.5 &100.4 &5.8    &5.8     &&\\
+G46.8$-$0.3&HC 30  & 46.77& $-$0.27& 0.16 &60.2 &25.3 &4.4 &7.0  &6.4$^{[1]}$     &C\\
+G49.2$-$0.7&W51C   & 49.14& $-$0.61& 0.22 &62.3 &41.2 &5.4 &5.4  &6$^{[1]}$       &A\\
+           &       &      &        &      &122.8&51.8  &5.4    &5.4     &&\\
+G54.4$-$0.3&HC 40  & 54.47& $-$0.29& 0.38 &43.6 &15.5 &4.1 &5.6  &3.3$^{[1]}$,6.6$^{[8]}$     &B\\
+G57.2$+$0.8&4C21.53& 57.24& $+$0.82& 0.10 &106.1&39.8 &4.5 &4.5  &\nodata         &B\\ 
+\hline
+\end{tabular*}
+\begin{tablenotes}
+      \small
+      \item a. Names are defined using the Galactic coordinates given by \cite{Green2014}.
+      \item b. Qualitative metric of data quality (A=high quality, C=low quality)
+      \item REFERENCES: [1] \citet{Case1998};[2] \citet{Seta1998};[3] \citet{Zhu2013};[4] \citet{Caswell1975}; [5] \citet{Safi-Harb2005}; [6] \citet{Pavlovic2014}; [7] \citet{Zhu2014}; [8] \citet{Ranasinghe2017}.
+      \end{tablenotes}
+\end{threeparttable}
+
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\subfloat[SIGGMA spectral grid]{\includegraphics[width = 3.5in]{G34.7-0.4_ha_spec.eps}}
+\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 3.5in]{G34.7-0.4_vgps_contour.eps}}\\
+\caption{The H-RRL emission toward SNR: G34.7-0.4.
+          (a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	  The background is the 0$^{th}$ moment \textbf{H}-RRL map over $0$ to $+150$\kms.
+	  The white circle is the central region of the SNR.
+	  (b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	  The levels are 0.5, 1, 2, 3, 4, 5, 6, 7 Jy\,beam$^{-1}$\kms.
+	  The blue circles are location of \textbf{known \hii\ regions from the WISE catalog}.
+	  }
+\label{fig_snr-g347}
+\end{figure}
+
+\section{Individual RRL emission regions}\label{sec_indi}
+
+SIGGMA data can reveal information not apparent in single-pointing RRL observations.
+To illustrate this, we present the RRL analysis of two large star-forming regions, W49 and W51 \citep{Westerhout1958}.
+
+\subsection{W49}
+The W49 star-forming complex can be separated into sub-regions W49A and W49B \citep{Mezger1967c}.
+W49A is among the most luminous star formation complexes in the Galaxy and is located at a distance of 11.11$^{+0.79}_{-0.69}$\,\kpc\ reported by \citet{Zhang2013} from trigonometric parallax measurements of H$_{2}$O masers.
+W49B is a SNR whose centroid is $\sim12\arcmin$ from that of W49A \citep{Lacey2001}.
+In the W49A region, there are compact radio sources with RRL emission that are embedded in diffuse ionized gas \citep{Depree1997,Depree2003}.
+Although W49A has many embedded ultra-compact \hii\ regions, due to beam dilution much of the RRL emission observed by SIGGMA likely arises mostly from diffuse gas.
+Also, at L-band, compact \hii\ regions may be optically thick and therefore may not contribute as much to the observed RRL emission as they do at higher frequencies \textbf{\citep{Kim2001,Wood1989}}.
+
+Figure~\ref{w49_spec_map} (a) shows the SIGGMA RRL spectral grid for the W49 complex.
+RRL emission is detected over the entire region.
+In addition to the known velocity of W49A, $\sim10$\kms, there is a second velocity component around $\sim60$\kms\ found toward both W49A and W49B (Figure~\ref{w49_spec_map} (b)).
+This 60\kms\ component has been detected previously.
+\citet{Downes1974} reported the RRL detection in the direction of W49B with a LSR velocity of 65\kms.
+\citet{Pankonin1975} also detected RRL emission toward W49B at an LSR velocity of 60\kms.
+\citet{Anantharamaiah1986} detected a RRL velocity of 63\kms\ toward W49A (G43.2-0.1).
+Figure~\ref{w49_spec_map} panels (c) and (d) show the RRL intensity contours of the two velocity components overlaid on top of VGPS continuum data.
+The 60\kms\ RRL component is also found toward W49A, although some of its intensity could arise from the line wing of 10\kms\ component.
+\textbf{Both of the 10\kms\ and 60\kms\ H-RRL emissions peaks approximately at the maximum of the VLA continuum for the two sources.
+Although the RRL contour peaks are offset to the east of W49B.}
+%The spatial mismatch implies that the thermal RRL emission region is not due to expansion of the SNR.
+
+The fact that there are two velocity components for the region is confusing.
+\textbf{The kinematic distance for W49A from the 10\kms\ component, 11.4\kpc\, agrees with the known distance for this region, 11.1\kpc\, so we can assume that the 10\kms\ component comes from gas about 11\kpc\ away.}
+Previous \hi\ absorption studies suggested W49B lies at a distance of $\sim8.0$\kpc\ \citep{Moffett1994} or $\sim11.4$\kpc\ \citep{Brogan2001}.
+Recent work by \citet{Zhu2014} assigned \textbf{a kinematic distance $\sim10$\kpc\ for W49B based on CO emission line at velocity of 40\kms.}
+As mentioned in Section~\ref{sec_snr}, \citet{Pankonin1976} attributed the 60\kms\ RRL to extended \hii\ regions, which is consistent with the extended emitting morphology seen in SIGGMA data.
+It is also possible that the 60\kms\ component is due to the local velocity structure associated with the expanding motion of W49B, in which case one would expect a shell-like RRL emission region surrounding W49B.
+Because of the morphology of the 60\kms\ component, in addition to the fact that it is not particularly broad, we do not believe that it can be explained by expansion. 
+
+To determine if the 60\kms\ component is associated with W49B, we analyze VGPS \hi\ data in its direction.  We extract the integrated \hi\ VGPS spectrum toward a portion of W49A and W49B.  We did not extract spectra toward the brightest portions of these regions so that the average spectra are not saturated.  We see \hi\ absorption from all gas in foreground to the bright continuum sources.
+The upper spectrum in Figure~\ref{w49_hi} shows that there is \hi\ with velocities from 0$-$70\kms\ along the lines of sight toward W49A and W49B.
+The lower spectrum is the \textbf{difference} of the \hi\ absorption between W49A and W49B.  The negative dips in the lower panel therefore represent the velocities of gas that is foreground to W49A, but that lies behind W49B.
+
+Essentially all velocities where W49A shows absorption have corresponding absorption for W49B, except near 10\kms\ and possibly near 60\kms.
+We conclude from this analysis there is \hi\ at 10\kms\ that lies in between W49A and W49B, and therefore that W49B itself lies foreground to W49A.
+The 60\kms\ gas may also lie in between W49A and W49B, although in this case the situation is more unclear due to the smaller difference in the \hi\ spectra.
+Although the origin of the 60\kms\ component is still unclear, the fact that there is 60\kms\ gas in front of both W49A and W49B agrees with the explanation that this emission is stimulated by the W49B continuum.
+
+\begin{figure}[htbp]
+\centering
+\subfloat[Integrated RRL intensity map overlaid with spectral lines.]{\includegraphics[width = 3.0in]{w49_spec_map.eps}}
+\subfloat[H-RRL spectra of W49A and W49B]{\includegraphics[width = 3.0in]{w49_spec_plot.eps}}\\
+\subfloat[The 10\kms\ velocity component]{\includegraphics[width = 3.0in]{w49_vgps_siggma_v1.eps}}
+\subfloat[The 60\kms\ velocity component]{\includegraphics[width = 3.0in]{w49_vgps_siggma_v2.eps}}\\
+\caption{\textbf{SIGGMA observations of the W49 complex.} W49A is centered around G43.2+0.0 and W49B is to the southeast centered around G43.3-0.2.
+(a) The RRL spectral grid. The background image is of RRL integrated intensity integrated over the velocity range from 0 to 70\kms.
+(b) \textbf{The spectra of W49A and W49B, which are averaged over radius from the WISE catalog for W49A and Table~\ref{tab_snr} for W49B.} The line intensity of W49B is enlarged by factor of 2 so that its detail can be seen.
+(c) and (d) are the SIGGMA integrated intensity RRL contours overlaid on VGPS 1.4\ghz\ continuum data. \textbf{The 3.$4\arcmin$ cirles show the ALFA beam size.} The SIGGMA data were integrated over $0$ to $+20$\kms\ (panel c) and $+50$ to $+70$\kms\ (panel d).
+The SIGGMA contour levels are at values of 0.05, 0.1, 0.2, 0.4, 0.6, 1.0, 1.4, and 1.8 Jy\,beam$^{-1}$\kms\ for (c) and 0.05, 0.1, 0.2, 0.4, and 0.6 Jy\,beam$^{-1}$\kms\ for (d).
+}\label{w49_spec_map}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\plotone{w49_hi_plot.eps}
+\caption{\hi\ absorption spectra toward W49A and W49B (top), and the difference in \hi\ absorption between the two regions (bottom). The absorption features in the bottom panel may arise from gas in between W49A and W49B. 
+}\label{w49_hi}
+\end{figure}
+\subsection{W51}
+The W51 region is another enormous first-quadrant star formation complex.
+It is located near the tangent point in the Sagittarius Arm at a distance of 5.41$^{+0.31}_{-0.28}$\kpc\ measured by using maser trigonometric parallax \citep{Sato2010}.  W51 is grouped into three sub-regions: W51A, W51B, and W51C.
+W51A and W51B are massive star-forming regions, whereas W51C is a SNR \citep{Subrahmanyan1995}.
+Pointed RRL observations toward W51 have been carried out \citep[i.e.][]{Mezger1967b,Terzian1969,Pankonin1979,Roelfsema1992b, Anderson2011}, showing that it can be decomposed into multiple discrete \hii\ regions.
+
+Similar to W49, much of the SIGGMA RRL emission toward W51 is likely due to diffuse gas rather than from compact \hii\ regions.
+Figure~\ref{w51_map} shows the comparison of the integrated RRL contours from SIGGMA, with 1.4\ghz\ continuum from the VGPS (blue), and  IR data from {\it Spitzer} (8$\um$ in green and 24 $\um$ in red).
+\textbf{The IR emission, which arises from dust and PAHs, is seen to be well associated with the \hii\ regions.}
+%The contours corresponding with the ``known'' \hii\ region (the red circle in Figure~\ref{w51_map}) shows the capability of SIGGMA for detecting weak, extended RRL emission.
+%It is indicated that the SIGGMA RRL map is sensitive to not only discrete \hii\ regions but also the diffuse gas in between.
+The RRL contours traces the strong IR emission and also shows some RRL emitting regions where the IR emission is not obvious.
+To the west of W51B in Figure~\ref{w51_map} (around G48.5$-$0.2), RRLs are detected from diffuse ionized gas, which shows a bubble-like feature in the IR.
+The lack of IR emission at locations of strong RRL emission implies that the RRL emission may be due to leaking photons from \hii\ regions; such photons can destroy PAHs.
+Figure~\ref{fig_crrl-g494} in Appendix~\ref{appe:crrl} and Figure~\ref{fig_snr-g492} in Appendix~\ref {appe:snr} give the spectral grid of C-RRL toward W51A and \textbf{part of} W51B, and the integrated H-RRL contours of the W51C region, \textbf{respectively}.
+
+As we saw for other SNRs, there is strong RRL emission toward W51C (Figure~\ref{w51_map}), which is bright in 1.4\ghz\ continuum, but weak in the IR.
+Figure~\ref{w51_rrl} (a) shows the averaged RRL emission from W51A, W51B, and W51C.
+The \textbf{tangent} velocity in the direction of W51 is $\sim60$\kms.
+The LSR velocities of SIGGMA-detected RRLs toward W51A, W51B, and W51C are 62.8\kms, 66.4\kms, and 62.3\kms, indicating that they are all probably part of a large star formation complex in a large molecular cloud.
+This agrees well with the comprehensive studies in the literature \citep{Mufson1979, Mehringer1994, Brogan2013}.
+Besides the primary $\sim60$\kms\ velocity component, the spectral line toward W51C also shows a broad profile, which is a common feature among the SIGGMA detections toward other SNRs.
+
+\citet{Koo1997a, Koo1997b} studied the interaction between W51C and a nearby molecular cloud.
+From the interface between the SNR and the surrounding molecular cloud, \textbf{they found emission line components of CO and HCO$^{+}$, as well as \hi, at the higher velocity of around 100\kms.}
+Coincidentally, the broad RRL component is at 122.8\kms\ toward W51C.
+In addition, we can see a bump around $-20$\kms\ in the W51C spectrum (Figure~\ref{w51_rrl} (a)) which shows no indication of being fictitious. 
+\textbf{It could be possible that the $-20$\kms\ component is the counterpart of the 122\kms\ H-RRL. Although the line widths of C-RRLs are usually narrow.
+We have no firm evidence for this explanation.}
+
+In order to obtain a better understanding of the origin of the RRL in the direction of W51C, we produce 0th and 2nd moment maps by averaging over three separated velocity ranges, which are $-30$ to $0$, $+10$ to $+90$, and $+120$ to $+150$\kms\ (Figure~\ref{w51_rrl} (b)).
+From the middle-row maps, we see the $\sim60$\kms\ RRL emitting region is covering the whole region uniformly. 
+Thus, the 62.3\kms\ component along the line of sight of W51C might be from the stimulated emission of the foreground gas located within the same molecular cloud as W51A and W51B.
+The upper- and lower-row maps show that the $<0$\kms\ and $>+100$\kms\ line emitting components seem to be encompassing the SNR, possibly indicating that RRLs originate from \textbf{the post-shock ionized gas located at the interfaces between the SNR and molecular gas.
+The $\sim$100\kms\ velocity from the H-RRL is compatible with the velocity of an expanding shell estimated by \cite{Koo1997a} based on their high velocity \hi\ analysis.}
+
+\begin{figure}[htbp]
+\centering
+\plotone{w51_rgb_siggma.eps}
+\caption{Three-color map of W51 
+with {\it Spitzer} 24 $\um$ data in red,  {\it Spitzer} 8 $\um$ data in green, and VGPS 1.4\ghz\ continuum data in blue. 
+SIGGMA H-RRL contours are overlaid at levels of 0.05, 0.15, 0.3, 0.45, 0.6, 0.9, 1.2, 1.5, 1.8, and 2.1 Jy\,beam$^{-1}$\kms.
+\textbf{In order to present the general feature over the W51 complex, we set the integral velocity range only to cover the major RRL component, which is from 30\kms\ to 90\kms.} The red circle shows the location and radius of a ``known'' \hii\ region from the WISE catalog, illustrating SIGGMA's ability to detect faint RRL emission. The blue circle shows the location of the SNR W51C with the radius from the Green catalog.}\label{w51_map}
+\end{figure}
+\begin{figure}[htbp]
+\centering
+\subfloat[The RRL spectra.]{\includegraphics[width = 3.2in]{w51_spec.eps}}
+\subfloat[The moment maps]{\includegraphics[width = 3.2in]{w51_moment.eps}}\\
+\caption{The SIGGMA RRL results of W51 region. (a) The averaged spectra of W51A, W51B and W51C. (b) The 0th and 2nd moment maps with velocity ranges of $-30$ to $0$, $+10$ to $+90$, and $+120$ to $+150$\kms. The location of SNR W51C is marked by the black circles in the images\textbf{, whose radius are from the Green catalog.}}\label{w51_rrl}
+\end{figure}
+
+\section{Summary} \label{sec_summ}
+SIGGMA is the most sensitive large-scale RRL survey extent.
+The SIGGMA data fully sample the RRL emission from ionized gas along the Galactic plane $32\degr \leq \ell \leq 70\degr$, $|b|\le 1\degr.5$.
+The average rms level of the SIGGMA spectra is $\sim0.65$\,mJy\,beam$^{-1}$ ($\sim6.5$\,mK).
+Using the survey data observed with a FWHM of 3$\arcmin$.4, we have produced RRL data cubes with a smoothed FWHM of 6$\arcmin$ and a velocity resolution of 5.1\kms.
+Comparing with the previous studies within the survey zone, SIGGMA provides RRL maps with the highest angular resolution.
+In this paper, we have summarized the current status of the survey, discussed the data quality and processing technique, and presented first survey results.
+The survey data are available online in standard fits files format.\footnote{\url{http://www.naic.edu/~siggma/}}
+
+By matching with the {\it WISE} catalog, we generate RRL spectra in the direction of 244 known and 79 candidate \hii\ regions.
+We analyzed the Galactic distribution of ionized emission and derived a thermal continuum map along the Galactic plane.
+Due to the observational strategy, SIGGMA data are insensitive to large-scale emission from the WIM.
+
+SIGGMA has catalogued unusually broad (FWHM $\geq$ 50\kms) and narrow (FWHM$\leq$ 15\kms) RRLs toward known and candidate \hii\ regions. Considering the qualities of SIGGMA spectra, it is possible that these line widths are caused by observational artifacts. For example, the broad lines may be due to incomplete baseline removal. The narrow lines, which are almost always found in spectra with multiple components, may be introduced by the calibration. If there is a RRL signal at a similar velocity in both the on- and off-source locations, the on-off spectrum may have a narrow residual. 
+This effect can be mediated by calibrating the spectra using a median filtering technique \citep{McIntyre2013}\footnote{see \url{http://www.naic.edu/~astro/aotms/performance/medianfiltering.pdf}}, although this method also introduces undesirable systematic effects into the data, namely a reduction in peak line flux.
+Follow-up studies of the narrow and broad lines should be done. If the detections are confirmed, they would imply extreme properties of ionized gas, possibly related to expansion velocity and turbulence.
+
+We detected 11 C-RRL emitting regions, all of which are co-spatial with known \hii\ regions.
+\textbf{The C-RRL distributions of these regions are mostly well matched in positions with the PAHs emitting morphologies at 24 $\um$, which is a good tracer for PDRs.
+The comparison indicates the PDR origin of C-RRL emission.}
+The occasional mismatches, where C-RRL was detected with weak IR emission, suggests the possibilities of other C-RRL forming regions far away from \hii\ region molecular cloud interfaces.
+
+Previous studies have reported $\sim5$ RRL detections in the direction of SNRs. 
+We detected the RRL emission toward 14 Galactic SNRs within the SIGGMA region, nearly tripling the known sample.
+Many of these detections have broad line components $\geq 40$\kms.
+Because of the non-thermal nature of SNRs and the low frequency (1.4\ghz) RRL emission, the SIGGMA-detected RRLs toward SNRs are likely stimulated emission due to the background synchrotron radiation of the SNRs.
+The RRL emission may be from ionized gas that is physically associated with the SNRs, or due to foreground diffuse ionized gas along the line of sight.
+For SNRs with large FWHM RRL line widths, the former scenario is preferred since the broad line widths may represent the expanding motion of local gas surrounding the SNRs.
+The morphology of RRL emitting regions, as well as their velocities and line widths, may possibly allow more detailed studies on the origin of RRLs toward SNRs.
+
+To illustrate the utility of SIGGMA data toward star formation complexes, we discussed results toward the two bright star-forming complexes, W49 and W51.
+We detect two RRL velocity components toward the W49 complex.  Our analysis of the SNR W49B data suggest that the 10\kms\ RRL component is unlikely to be associated with the SNR.
+Although the origin of the 60\kms\ is not clear, it may be caused by stimulated emission of foreground diffuse ionized gas.
+RRLs in the direction of SNR W51C were also detected by SIGGMA, with velocities of $\sim60$\kms\ and $\sim120$\kms.
+The $\sim60$\kms\ component toward the SNR W51C is similar to that of W51A and W51B.
+Stimulated emission may again explain the strength of the 60\kms\ component toward W51C, and
+the high velocity component may indicate the expanding motion of local gas surrounding the SNR.
+
+\acknowledgments
+We are grateful to the Arecibo Observatory staff for their help and hospitality during the SIGGMA project.
+The Arecibo Observatory is operated by SRI International under a cooperative agreement with the National Science
+Foundation (AST-1100968), and in alliance with Ana G. M\'endez-Universidad Metropolitana, and the Universities Space Research Association.
+We also thank the P-ALFA and ALFA-ZOA teams for organizing the commensal observations. 
+Bin Liu thanks West Virginia University for hosting him as a postdoctoral researcher during completion of this project, and thanks the China Scholarships Council for financial support from program 201504910306.
+Bin Liu is also supported by National Natural Science Foundation of China (Grant No: 11503036).
+
+\newpage
+\appendix
+
+\section{Catalogues of detected \hii\ regions}\label{appe:cata}
+\input{table_cata_k}
+\input{table_cata_c}
+\newpage
+
+\section{Figures of detected C-RRL emission regions}\label{appe:crrl}
+
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G34.7-0.6_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G34.7-0.6_rgb_contour.eps}}\\ 
+	\caption{The C-RRL emission region: G34.7-0.6.
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $30$ to $50$\kms.
+	The negative spike to the south of the region is likely to be RFI from the off-position that remains in the final spectra.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 4, 8, 12, 16, 18, 22 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g347}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G35.1-0.7_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G35.1-0.7_rgb_contour.eps}}\\
+	\caption{The C-RRL emission region: G35.1-0.7.
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $10$ to $40$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 2, 4, 6, 8, 10, 12, 15, 18 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g351}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G38.9-0.4_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G38.9-0.4_rgb_contour.eps}}\\
+	\caption{The C-RRL emission region G38.9-0.4.
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map integrated over $20$ to $50$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid with integrated C-RRL contours.
+	The contour levels are 2, 4, 6, 7 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g389}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G43.2-0.0_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G43.2-0.0_rgb_contour.eps}}\\ 
+	\caption{The C-RRL emission region: G43.2-0.0.
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $-20$ to $20$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 5, 10, 25, 50, 100, 200 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g432}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G45.5+0.0_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G45.5+0.0_rgb_contour.eps}}\\ 
+	\caption{The C-RRL emission region: G45.5+0.0.
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $30$ to $70$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 5, 10, 15, 20, 25 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g455}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G49.5-0.4_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G49.5-0.4_rgb_contour.eps}}\\
+	\caption{The C-RRL emission region: G49.5-0.4
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $30$ to $70$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 5, 10, 25, 50, 100, 200, 250 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g494}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G53.6+0.0_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G53.6+0.0_rgb_contour.eps}}\\
+	\caption{The C-RRL emission region: G53.6+0.0
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $0$ to $+30$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 2, 4, 6, 8 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g536}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G60.9-0.1_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G60.9-0.1_rgb_contour.eps}}\\ 
+	\caption{The C-RRL emission region: G60.9-0.1
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $0$ to $+30$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 2, 4, 6, 8 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g609}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G61.4+0.1_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G61.4+0.1_rgb_contour.eps}}\\
+	\caption{The C-RRL emission region: G61.4+0.1
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $0$ to $+30$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 5, 10, 20, 40, 80,160, 320 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g614}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G63.1+0.4_ca_spec.eps}}
+	\subfloat[Infrared color map  ]{\includegraphics[width = 2.5in]{G63.1+0.4_rgb_contour.eps}}\\ 
+	\caption{The C-RRL emission region: G63.1+0.4
+	(a) The SIGGMA spectral grid with the velocity range from $-50$ to $+150$\kms.
+	The background is the 0$^{th}$ moment C-RRL map over $-5$ to $+30$\kms.
+	(b) The IR RGB color map (r: 24\,$\um$, g: 8\,$\um$, b: 4.5\,$\um$) overlaid by integrated RRL contour.
+	The levels are 5, 10, 15, 20, 25, 30 mJy\,beam$^{-1}$\kms.}
+	\label{fig_crrl-g631}
+\end{figure}
+
+\newpage
+
+\section{Figures of detected H-RRL emission toward Galactic Supernova Remnants}\label{appe:snr}
+
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G33.6+0.1_ha_spec.eps}} 
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G33.6+0.1_vgps_contour.eps}}\\  
+	\caption{The H-RRL emission toward SNR: G33.6+0.1.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.1, 0.15, 0.2, 0.25, 0.3, 0.35 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of \hii\ regions.
+	}
+	\label{fig_snr-g336}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G35.6-0.4_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G35.6-0.4_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G35.6-0.4.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.05, 0.07, 0.09, 0.11, 0.13, 0.15 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of \hii\ regions.
+	}
+	\label{fig_snr-g356}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G36.6-0.7_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G36.6-0.7_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G36.6-0.7.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.04, 0.07, 0.1, 0.13, 0.16 Jy\,beam$^{-1}$\kms.
+	There are no \hii\ regions located in the figure covered region.
+	}
+	\label{fig_snr-g366}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G39.2-0.3_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G39.2-0.3_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G39.2-0.3.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.1, 0.2, 0.4, 0.6, 0.8, 1.0 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of \hii\ regions.
+	}
+	\label{fig_snr-g392}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G40.5-0.5_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G40.5-0.5_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G40.5-0.5.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.02, 0.04, 0.06, 0.08, 0.1, 0.15, 0.2 Jy\,beam$^{-1}$\kms.
+	There are no \hii\ regions located in the figure covered region.
+	}
+	\label{fig_snr-g405}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G41.1-0.3_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G41.1-0.3_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G41.1-0.3.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.1, 0.2, 0.3, 0.4, 0.5 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of \hii\ regions.
+	}
+	\label{fig_snr-g411}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G41.5+0.4_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G41.5+0.4_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G41.5+0.4.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.05, 0.08, 0.11, 0.14, 0.17 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of \hii\ regions.
+	}
+	\label{fig_snr-g415}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G43.3-0.2_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G43.3-0.2_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G43.3-0.2.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.25, 0.5, 1, 1.5, 2, 2.5, 3 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of \hii\ regions.
+	}
+	\label{fig_snr-g433}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G45.7-0.4_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G45.7-0.4_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G45.7-0.4.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of \hii\ regions.
+	}
+	\label{fig_snr-g457}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G46.8-0.3_ha_spec.eps}}
+	\subfloat[VGPS 1.4GHz continuum map]{\includegraphics[width = 2.5in]{G46.8-0.3_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G46.8-0.3.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.1, 0.15, 0.2, 0.25, 0.3, 0.4 Jy\,beam$^{-1}$\kms.
+	The blue circle is the location of a \hii\ region.
+	}
+	\label{fig_snr-g468}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G49.2-0.7_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G49.2-0.7_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G49.2-0.7.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of a \hii\ regions.
+	}
+	\label{fig_snr-g492}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G54.4-0.3_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G54.4-0.3_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G54.4-0.3.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.05, 0.15, 0.25, 0.35, 0.45 Jy\,beam$^{-1}$\kms.
+	The blue circles are location of a \hii\ regions.
+	}
+	\label{fig_snr-g544}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subfloat[SIGGMA spectral grid]{\includegraphics[width = 2.5in]{G57.2+0.8_ha_spec.eps}}
+	\subfloat[VGPS 1.4\ghz\ continuum map]{\includegraphics[width = 2.5in]{G57.2+0.8_vgps_contour.eps}}\\
+	\caption{The H-RRL emission toward SNR: G57.2+0.8.
+	(a) The SIGGMA spectral grid with the velocity range from $-300$ to $+300$\kms.
+	The background is the 0$^{th}$ moment H-RRL map over $0$ to $+150$\kms.
+	The white circle is the central region of the SNR.
+	(b) The VGPS 1.4\ghz\ continuum map overlaid by integrated RRL contour.
+	The levels are 0.03, 0.05, 0.07, 0.09 Jy\,beam$^{-1}$\kms.
+	There are no \hii\ regions located in the figure covered region.
+	}
+	\label{fig_snr-g572}
+
+\end{figure}
+
+\newpage
+
+\bibliography{siggmaii}
+\bibliographystyle{aasjournal}
+
+\end{document}
